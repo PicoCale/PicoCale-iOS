@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD1B74001B41FE8C00E697C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B73FF1B41FE8C00E697C0 /* main.m */; };
+		FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74021B41FE8C00E697C0 /* AppDelegate.m */; };
+		FD1B74061B41FE8C00E697C0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74051B41FE8C00E697C0 /* FirstViewController.m */; };
+		FD1B74091B41FE8D00E697C0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74081B41FE8C00E697C0 /* SecondViewController.m */; };
+		FD1B740C1B41FE8D00E697C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740A1B41FE8D00E697C0 /* Main.storyboard */; };
+		FD1B740E1B41FE8D00E697C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740D1B41FE8D00E697C0 /* Images.xcassets */; };
+		FD1B74111B41FE8D00E697C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */; };
+		FD1B741D1B41FE8D00E697C0 /* PicoCaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B741C1B41FE8D00E697C0 /* PicoCaleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD1B74171B41FE8D00E697C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD1B73F21B41FE8C00E697C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD1B73F91B41FE8C00E697C0;
+			remoteInfo = PicoCale;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD1B73FA1B41FE8C00E697C0 /* PicoCale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCale.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1B73FE1B41FE8C00E697C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD1B73FF1B41FE8C00E697C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FD1B74011B41FE8C00E697C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FD1B74021B41FE8C00E697C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FD1B74041B41FE8C00E697C0 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		FD1B74051B41FE8C00E697C0 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		FD1B74071B41FE8C00E697C0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		FD1B74081B41FE8C00E697C0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		FD1B740B1B41FE8D00E697C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD1B740D1B41FE8D00E697C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FD1B74101B41FE8D00E697C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FD1B74161B41FE8D00E697C0 /* PicoCaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicoCaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1B741B1B41FE8D00E697C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD1B741C1B41FE8D00E697C0 /* PicoCaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicoCaleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD1B73F71B41FE8C00E697C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD1B74131B41FE8D00E697C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD1B73F11B41FE8C00E697C0 = {
+			isa = PBXGroup;
+			children = (
+				FD1B73FC1B41FE8C00E697C0 /* PicoCale */,
+				FD1B74191B41FE8D00E697C0 /* PicoCaleTests */,
+				FD1B73FB1B41FE8C00E697C0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD1B73FB1B41FE8C00E697C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD1B73FA1B41FE8C00E697C0 /* PicoCale.app */,
+				FD1B74161B41FE8D00E697C0 /* PicoCaleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD1B73FC1B41FE8C00E697C0 /* PicoCale */ = {
+			isa = PBXGroup;
+			children = (
+				FD1B74011B41FE8C00E697C0 /* AppDelegate.h */,
+				FD1B74021B41FE8C00E697C0 /* AppDelegate.m */,
+				FD1B74041B41FE8C00E697C0 /* FirstViewController.h */,
+				FD1B74051B41FE8C00E697C0 /* FirstViewController.m */,
+				FD1B74071B41FE8C00E697C0 /* SecondViewController.h */,
+				FD1B74081B41FE8C00E697C0 /* SecondViewController.m */,
+				FD1B740A1B41FE8D00E697C0 /* Main.storyboard */,
+				FD1B740D1B41FE8D00E697C0 /* Images.xcassets */,
+				FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */,
+				FD1B73FD1B41FE8C00E697C0 /* Supporting Files */,
+			);
+			path = PicoCale;
+			sourceTree = "<group>";
+		};
+		FD1B73FD1B41FE8C00E697C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD1B73FE1B41FE8C00E697C0 /* Info.plist */,
+				FD1B73FF1B41FE8C00E697C0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD1B74191B41FE8D00E697C0 /* PicoCaleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD1B741C1B41FE8D00E697C0 /* PicoCaleTests.m */,
+				FD1B741A1B41FE8D00E697C0 /* Supporting Files */,
+			);
+			path = PicoCaleTests;
+			sourceTree = "<group>";
+		};
+		FD1B741A1B41FE8D00E697C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD1B741B1B41FE8D00E697C0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD1B73F91B41FE8C00E697C0 /* PicoCale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD1B74201B41FE8D00E697C0 /* Build configuration list for PBXNativeTarget "PicoCale" */;
+			buildPhases = (
+				FD1B73F61B41FE8C00E697C0 /* Sources */,
+				FD1B73F71B41FE8C00E697C0 /* Frameworks */,
+				FD1B73F81B41FE8C00E697C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicoCale;
+			productName = PicoCale;
+			productReference = FD1B73FA1B41FE8C00E697C0 /* PicoCale.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD1B74151B41FE8D00E697C0 /* PicoCaleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD1B74231B41FE8D00E697C0 /* Build configuration list for PBXNativeTarget "PicoCaleTests" */;
+			buildPhases = (
+				FD1B74121B41FE8D00E697C0 /* Sources */,
+				FD1B74131B41FE8D00E697C0 /* Frameworks */,
+				FD1B74141B41FE8D00E697C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD1B74181B41FE8D00E697C0 /* PBXTargetDependency */,
+			);
+			name = PicoCaleTests;
+			productName = PicoCaleTests;
+			productReference = FD1B74161B41FE8D00E697C0 /* PicoCaleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD1B73F21B41FE8C00E697C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Manishgant;
+				TargetAttributes = {
+					FD1B73F91B41FE8C00E697C0 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FD1B74151B41FE8D00E697C0 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = FD1B73F91B41FE8C00E697C0;
+					};
+				};
+			};
+			buildConfigurationList = FD1B73F51B41FE8C00E697C0 /* Build configuration list for PBXProject "PicoCale" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD1B73F11B41FE8C00E697C0;
+			productRefGroup = FD1B73FB1B41FE8C00E697C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD1B73F91B41FE8C00E697C0 /* PicoCale */,
+				FD1B74151B41FE8D00E697C0 /* PicoCaleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD1B73F81B41FE8C00E697C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1B740C1B41FE8D00E697C0 /* Main.storyboard in Resources */,
+				FD1B74111B41FE8D00E697C0 /* LaunchScreen.xib in Resources */,
+				FD1B740E1B41FE8D00E697C0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD1B74141B41FE8D00E697C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD1B73F61B41FE8C00E697C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1B74091B41FE8D00E697C0 /* SecondViewController.m in Sources */,
+				FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */,
+				FD1B74061B41FE8C00E697C0 /* FirstViewController.m in Sources */,
+				FD1B74001B41FE8C00E697C0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD1B74121B41FE8D00E697C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1B741D1B41FE8D00E697C0 /* PicoCaleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD1B74181B41FE8D00E697C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD1B73F91B41FE8C00E697C0 /* PicoCale */;
+			targetProxy = FD1B74171B41FE8D00E697C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD1B740A1B41FE8D00E697C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD1B740B1B41FE8D00E697C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD1B74101B41FE8D00E697C0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD1B741E1B41FE8D00E697C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD1B741F1B41FE8D00E697C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD1B74211B41FE8D00E697C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PicoCale/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD1B74221B41FE8D00E697C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PicoCale/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FD1B74241B41FE8D00E697C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicoCaleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicoCale.app/PicoCale";
+			};
+			name = Debug;
+		};
+		FD1B74251B41FE8D00E697C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicoCaleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicoCale.app/PicoCale";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD1B73F51B41FE8C00E697C0 /* Build configuration list for PBXProject "PicoCale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD1B741E1B41FE8D00E697C0 /* Debug */,
+				FD1B741F1B41FE8D00E697C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD1B74201B41FE8D00E697C0 /* Build configuration list for PBXNativeTarget "PicoCale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD1B74211B41FE8D00E697C0 /* Debug */,
+				FD1B74221B41FE8D00E697C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD1B74231B41FE8D00E697C0 /* Build configuration list for PBXNativeTarget "PicoCaleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD1B74241B41FE8D00E697C0 /* Debug */,
+				FD1B74251B41FE8D00E697C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD1B73F21B41FE8C00E697C0 /* Project object */;
+}
