@@ -1,3 +1,3 @@
 # PicoCale-iOS 
 
-iOS codebase for PicoCale Project
+iOS codebase for PicoCale project
