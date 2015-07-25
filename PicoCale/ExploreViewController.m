@@ -6,17 +6,27 @@
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ExploreViewController.h"
+#import "Flickr.h"
+#import "FlickrPhoto.h"
 
-@interface SecondViewController ()
+@interface ExploreViewController ()
+
+@property(nonatomic, strong) NSMutableDictionary *searchResults;
+@property(nonatomic, strong) NSMutableArray *searches;
+@property(nonatomic, strong) Flickr *flickr;
 
 @end
 
-@implementation SecondViewController
+@implementation ExploreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.searches = [@[] mutableCopy];
+    self.searchResults = [@{} mutableCopy];
+    self.flickr = [[Flickr alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {

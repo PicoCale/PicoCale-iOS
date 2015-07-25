@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  HomeViewController.m
 //  PicoCale
 //
 //  Created by Manishgant on 6/29/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "HomeViewController.h"
 
-@interface FirstViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
