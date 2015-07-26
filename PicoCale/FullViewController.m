@@ -32,18 +32,4 @@
     
 }
 
-
-/*
- Clear the image of the UIImageView when the view is
- about to disappear so that it is available for the next image
- to be selected
- */
-
--(void) viewWillDisappear:(BOOL)animated {
-    
-    [self->_fullImageView setImage:nil];
-    
-}
-
-
 @end

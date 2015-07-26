@@ -37,6 +37,8 @@
 		FD88F2491B64A5C200DC262D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */; };
 		FD88F24B1B64A5CB00DC262D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F24A1B64A5CB00DC262D /* Social.framework */; };
 		FD88F24D1B64A5D200DC262D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F24C1B64A5D200DC262D /* Accounts.framework */; };
+		FD88F2501B653CDC00DC262D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F24F1B653CDC00DC262D /* Constants.m */; };
+		FD88F2531B654CB100DC262D /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2521B654CB100DC262D /* SettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,10 @@
 		FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		FD88F24A1B64A5CB00DC262D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FD88F24C1B64A5D200DC262D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		FD88F24E1B653CCB00DC262D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FD88F24F1B653CDC00DC262D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FD88F2521B654CB100DC262D /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		FD88F2541B654E0100DC262D /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,8 @@
 		FD1B73FC1B41FE8C00E697C0 /* PicoCale */ = {
 			isa = PBXGroup;
 			children = (
+				FD88F24E1B653CCB00DC262D /* Constants.h */,
+				FD88F24F1B653CDC00DC262D /* Constants.m */,
 				FD88F2261B64A57F00DC262D /* CameraViewController.h */,
 				FD88F2271B64A57F00DC262D /* CameraViewController.m */,
 				FD88F2281B64A57F00DC262D /* FullViewController.h */,
@@ -206,6 +214,8 @@
 				FD88F2391B64A57F00DC262D /* TwitterViewController.m */,
 				FD1B74011B41FE8C00E697C0 /* AppDelegate.h */,
 				FD1B74021B41FE8C00E697C0 /* AppDelegate.m */,
+				FD88F2541B654E0100DC262D /* SettingsController.h */,
+				FD88F2521B654CB100DC262D /* SettingsController.m */,
 				FD1B740A1B41FE8D00E697C0 /* Main.storyboard */,
 				FD1B740D1B41FE8D00E697C0 /* Images.xcassets */,
 				FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */,
@@ -378,11 +388,13 @@
 			files = (
 				FD88F23E1B64A57F00DC262D /* Photo.m in Sources */,
 				FD88F23A1B64A57F00DC262D /* CameraViewController.m in Sources */,
+				FD88F2531B654CB100DC262D /* SettingsController.m in Sources */,
 				FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */,
 				FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */,
 				FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */,
 				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
 				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,
+				FD88F2501B653CDC00DC262D /* Constants.m in Sources */,
 				FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */,
 				FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */,
 				FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */,

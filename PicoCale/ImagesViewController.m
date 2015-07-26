@@ -10,6 +10,7 @@
 #import "FullViewController.h"
 #import "Photo.h"
 #import "Math.h"
+#import "SettingsController.h"
 
 
 @interface ImagesViewController ()
@@ -18,6 +19,7 @@
     CLLocationManager *locationManager;
     
     CLLocation *currentLocation;
+    
 }
 
 
@@ -25,10 +27,30 @@
 
 @implementation ImagesViewController
 
+
+static NSMutableString *radius_CC = (NSMutableString *) @"5";
+
++(NSString *)getRadius_C{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *geoRadius = [defaults objectForKey:@"geoRadius"];
+    if (geoRadius != nil){
+        return geoRadius;
+    } else {
+        return radius_CC;
+    }
+}
+
++(void)setRadius_C:(NSMutableString *)value {
+    
+    radius_CC = value;
+}
 /*
  Reload data when new photos are added
  */
 @synthesize photos = _photos;
+
+
 
 -(void)setPhotos:(NSMutableArray *)photos {
     if (_photos != photos) {
@@ -61,32 +83,51 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    double maxLatitude,minLatitude;
-    double maxLongitude,minLongitude;
-    
-    double radius = 0.1*0.8;
-    
     [super viewWillAppear:animated];
-    // collect the photos
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myGridImage"];
+    //[self->locationManager startUpdatingLocation];
+    
     [self->locationManager startUpdatingLocation];
+    
+    [self disPlayLocationBasedPictures:self->locationManager.location];
+    
+    [self.collectionView reloadData];
+    
+    
+}
+
+-(void) disPlayLocationBasedPictures:(CLLocation *)location {
+    
+    double maxLatitude,minLatitude;
+    double maxLongitude,minLongitude;
+    double radius;
+    
+    if (self.radius_C == nil) {
+        radius = [[ImagesViewController getRadius_C] doubleValue];
+        NSLog(@"Radius : %f",radius);
+    } else {
+        radius = [self.radius_C doubleValue];
+        NSLog(@"Radius : %f",radius);
+    }
+    // collect the photos
+    
     
     NSMutableArray *collector = [[NSMutableArray alloc] initWithCapacity:0];
     ALAssetsLibrary *al = [ImagesViewController defaultAssetsLibrary];
     
     
-    maxLatitude = [self getMaxLatitude:self->locationManager.location radius:radius];
+    maxLatitude = [self getMaxLatitude:location radius:radius];
     
-    maxLongitude = [self getMaxLongitude:self->locationManager.location radius:radius];
-    
-    
-    minLatitude = [self getMinLatitude:self->locationManager.location radius:radius];
+    maxLongitude = [self getMaxLongitude:location radius:radius];
     
     
-    minLongitude = [self getMinLongitude:self->locationManager.location radius:radius];
+    minLatitude = [self getMinLatitude:location radius:radius];
     
-    NSLog(@"%f %f %f %f",minLatitude,minLongitude,maxLatitude,maxLongitude);
+    
+    minLongitude = [self getMinLongitude:location radius:radius];
+    
+    //NSLog(@"%f %f %f %f",minLatitude,minLongitude,maxLatitude,maxLongitude);
     
     
     [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos
@@ -96,18 +137,20 @@
           {
               if (asset) {
                   
-                  ALAssetRepresentation *representation = [asset defaultRepresentation];
+                  //ALAssetRepresentation *representation = [asset defaultRepresentation];
                   CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
                   
                   double image_Latitude = location.coordinate.latitude;
                   double image_Longitude= location.coordinate.longitude;
-
+                  
                   
                   if ((image_Latitude > minLatitude) && (image_Latitude < maxLatitude) ) {
                       
                       if((image_Longitude < minLongitude) && (image_Longitude > maxLongitude)) {
+                          
                           [collector addObject:asset];
-                          NSLog(@"Image %@ Latitude = %f Longitude = %f",[representation filename],image_Latitude,image_Longitude);
+                          
+                          // NSLog(@"Image %@ Latitude = %f Longitude = %f",[representation filename],image_Latitude,image_Longitude);
                       }
                   }
                   
@@ -121,7 +164,29 @@
                     failureBlock:^(NSError *error) { NSLog(@"Error retrieving photos");}
      ];
     
+    
 }
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive)
+    {
+        
+    } else {
+        
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+        localNotification.alertBody = @"You have taken photos here!! Click here to view them";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+    }
+    
+}
+
 
 
 /*
@@ -148,16 +213,16 @@
     
     UICollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSLog(@"the cell is %@", imageCell);
+    //NSLog(@"the cell is %@", imageCell);
     
     // Configure each cell in the
     ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
-        
+    
     //NSLog(@"Image URL: %@", [url absoluteString]);
     
     imageCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithCGImage:[asset thumbnail]]];
     //collectionImageView.image = [UIImage imageWithCGImage:[asset thumbnail]];
-
+    
     return imageCell;
 }
 
@@ -278,11 +343,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    double radius;
+    SettingsController *sc = [[SettingsController alloc]init];
+    
+    if (sc.radius_C == nil) {
+        radius = 5*0.8;
+    } else {
+        radius = [sc.radius_C doubleValue] *0.8;
+        NSLog(@"Radius : %f",radius);
+    }
+    
+    
     self.collectionView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myGridImage"];
-
+    
     self->locationManager = [[CLLocationManager alloc] init];
-    self->locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    if(radius > 10) {
+        self->locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    } else {
+        self->locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    }
+    self->locationManager.distanceFilter = radius * 1690;
     self->locationManager.delegate = self;
     [self-> locationManager requestAlwaysAuthorization];
     [self->locationManager startUpdatingLocation];
