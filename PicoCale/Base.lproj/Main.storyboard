@@ -17,44 +17,50 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pdu-AL-AdO" kind="relationship" relationship="rootViewController" id="PBP-SA-pT7"/>
+                        <segue destination="YjH-sg-ZkT" kind="relationship" relationship="rootViewController" id="K0G-tU-aK3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgZ-7R-JEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="657" y="-529"/>
         </scene>
-        <!--List of Media-->
-        <scene sceneID="BZ2-oc-GBf">
+        <!--Images View Controller-->
+        <scene sceneID="ffV-bx-5g6">
             <objects>
-                <tableViewController id="pdu-AL-AdO" customClass="ImagesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="29" sectionFooterHeight="22" id="bV7-Ul-FDJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                <collectionViewController id="YjH-sg-ZkT" customClass="ImagesViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" id="GIa-tH-m6A">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myImages" id="hwD-PW-mei">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bhm-FP-Fgt">
+                            <size key="itemSize" width="85" height="85"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="myGridImage" id="wGS-cE-NDf">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hwD-PW-mei" id="yS7-7c-UdM">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
                                 <connections>
-                                    <segue destination="ubZ-Qi-Dok" kind="show" identifier="viewFullImage" trigger="accessoryAction" id="TRI-Bf-Zqa"/>
+                                    <segue destination="ubZ-Qi-Dok" kind="show" identifier="viewFullScreenImage" id="gMM-CR-hba"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
-                            <outlet property="dataSource" destination="pdu-AL-AdO" id="OFj-xr-AY4"/>
-                            <outlet property="delegate" destination="pdu-AL-AdO" id="pWL-hx-1uo"/>
+                            <outlet property="dataSource" destination="YjH-sg-ZkT" id="Ehk-Rj-bil"/>
+                            <outlet property="delegate" destination="YjH-sg-ZkT" id="GRZ-EB-VXG"/>
                         </connections>
-                    </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Gallery" image="Gallery" id="2SM-KV-5pU"/>
-                    <navigationItem key="navigationItem" title="List of Media" id="3aO-pE-WEX"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I52-eQ-jjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Zd4-kF-eet"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERT-Mu-JVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432.5" y="-529"/>
+            <point key="canvasLocation" x="1482" y="-529"/>
         </scene>
         <!--Full View Controller-->
         <scene sceneID="aEe-WS-aI6">
@@ -843,7 +849,6 @@
     </scenes>
     <resources>
         <image name="Camera" width="40" height="40"/>
-        <image name="Gallery" width="40" height="40"/>
         <image name="Twitter" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

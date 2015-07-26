@@ -6,14 +6,9 @@
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
-@import CoreLocation;
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <UIKit/UIKit.h>
 
-@interface Photo : NSObject
-
-@property(nonatomic,strong) NSString *identifier;
-@property(nonatomic, weak) NSURL *url;
-@property(nonatomic, weak) CLLocation *locationInfo;
-
-
+@interface PhotoCell : UICollectionViewCell
+@property(nonatomic, strong) ALAsset *asset;
 @end
-

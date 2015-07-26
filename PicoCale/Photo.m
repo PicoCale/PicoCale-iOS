@@ -5,16 +5,18 @@
 //  Created by Manishgant on 7/25/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
 #import "Photo.h"
 
-@interface Photo()
-
+@interface PhotoCell ()
+// 1
+@property(nonatomic, weak) IBOutlet UIImageView *photoImageView;
 @end
 
-@implementation Photo
-
-
-
+@implementation PhotoCell
+- (void) setAsset:(ALAsset *)asset
+{
+    // 2
+    _asset = asset;
+    self.photoImageView.image = [UIImage imageWithCGImage:[asset thumbnail]];
+}
 @end

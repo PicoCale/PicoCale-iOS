@@ -33,7 +33,7 @@
 -(void)setPhotos:(NSMutableArray *)photos {
     if (_photos != photos) {
         _photos = photos;
-        [self.tableView reloadData];
+        [self.collectionView reloadData];
     }
 }
 
@@ -69,6 +69,7 @@
     [super viewWillAppear:animated];
     // collect the photos
     
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myGridImage"];
     [self->locationManager startUpdatingLocation];
     
     NSMutableArray *collector = [[NSMutableArray alloc] initWithCapacity:0];
@@ -127,10 +128,12 @@
  Get the number of rows generated in Table View
  */
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+
+- (NSInteger) collectionView:(UICollectionView *)collectionView
+      numberOfItemsInSection:(NSInteger)section
 {
-    return [self.photos count];
-    
+    return self.photos.count;
 }
 
 
@@ -138,25 +141,23 @@
  Generate the Table View  and insert each row with the Image thumbnail
  and associated filename.
  */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"myImages";
+    static NSString *CellIdentifier = @"myGridImage";
     
-    UITableViewCell *imageCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (imageCell == nil) {
-        imageCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    
+    UICollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    NSLog(@"the cell is %@", imageCell);
     
     // Configure each cell in the
     ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
-    
+        
     //NSLog(@"Image URL: %@", [url absoluteString]);
     
-    
-    [imageCell.imageView setImage:[UIImage imageWithCGImage:[asset thumbnail]]];
-    [imageCell.textLabel setText:[asset.defaultRepresentation filename]];
-    imageCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+    imageCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithCGImage:[asset thumbnail]]];
+    //collectionImageView.image = [UIImage imageWithCGImage:[asset thumbnail]];
+
     return imageCell;
 }
 
@@ -166,7 +167,7 @@
  or a MPMoviePlayerController to play the video
  */
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     self->_assetInfo = [self.photos objectAtIndex:indexPath.row];
     
@@ -180,7 +181,7 @@
     if (!(([tempString containsString:(@".MOV")]) || ([tempString containsString:(@".MP4")])||
           ([tempString containsString:(@".mov")]) || ([tempString containsString:(@".mp4")]))) {
         
-        [self performSegueWithIdentifier:@"viewFullImage" sender:self.image];
+        [self performSegueWithIdentifier:@"viewFullScreenImage" sender:self.image];
         
     } else {
         
@@ -277,7 +278,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    self.collectionView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myGridImage"];
+
     self->locationManager = [[CLLocationManager alloc] init];
     self->locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self->locationManager.delegate = self;

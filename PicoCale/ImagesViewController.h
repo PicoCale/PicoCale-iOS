@@ -17,7 +17,7 @@
  make the view controller as UIImagePickerConcontroller delegate
  */
 
-@interface ImagesViewController : UITableViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
+@interface ImagesViewController : UICollectionViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSMutableArray *photos;
 
