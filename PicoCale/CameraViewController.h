@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  CameraViewController.h
 //  manantha_Universal_Multimedia
 //
 //  Created by Manishgant on 7/4/15.
@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface CameraViewController : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIImage *image;
 
+@property (nonatomic, strong) NSURL *opURL;
 
 @end
 

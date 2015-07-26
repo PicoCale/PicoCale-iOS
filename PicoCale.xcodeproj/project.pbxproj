@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5918EBC5F9D90748761F3825 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48911B13C967727B8B13FFF /* libPods.a */; };
 		FD1B74001B41FE8C00E697C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B73FF1B41FE8C00E697C0 /* main.m */; };
 		FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74021B41FE8C00E697C0 /* AppDelegate.m */; };
-		FD1B74061B41FE8C00E697C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74051B41FE8C00E697C0 /* HomeViewController.m */; };
-		FD1B74091B41FE8D00E697C0 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74081B41FE8C00E697C0 /* ExploreViewController.m */; };
 		FD1B740C1B41FE8D00E697C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740A1B41FE8D00E697C0 /* Main.storyboard */; };
 		FD1B740E1B41FE8D00E697C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740D1B41FE8D00E697C0 /* Images.xcassets */; };
 		FD1B74111B41FE8D00E697C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */; };
@@ -19,6 +18,25 @@
 		FD1B742F1B421E1900E697C0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1B742E1B421E1900E697C0 /* CoreMotion.framework */; };
 		FD1B74311B421E2000E697C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1B74301B421E2000E697C0 /* AVFoundation.framework */; };
 		FD1B74331B421E2600E697C0 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1B74321B421E2600E697C0 /* AVKit.framework */; };
+		FD88F2181B6421F100DC262D /* libDACircularProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2171B6421F100DC262D /* libDACircularProgress.a */; };
+		FD88F21A1B6421FC00DC262D /* libMWPhotoBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2191B6421FC00DC262D /* libMWPhotoBrowser.a */; };
+		FD88F21C1B64220300DC262D /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F21B1B64220300DC262D /* libSDWebImage.a */; };
+		FD88F21E1B64220A00DC262D /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F21D1B64220A00DC262D /* libMBProgressHUD.a */; };
+		FD88F23A1B64A57F00DC262D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2271B64A57F00DC262D /* CameraViewController.m */; };
+		FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2291B64A57F00DC262D /* FullViewController.m */; };
+		FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22B1B64A57F00DC262D /* ImagesViewController.m */; };
+		FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22D1B64A57F00DC262D /* MediaPreview.m */; };
+		FD88F23E1B64A57F00DC262D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22F1B64A57F00DC262D /* Photo.m */; };
+		FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2311B64A57F00DC262D /* PreviewController.m */; };
+		FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2331B64A57F00DC262D /* PreviewVideoController.m */; };
+		FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2351B64A57F00DC262D /* TweetDisplayView.m */; };
+		FD88F2421B64A57F00DC262D /* TwitterVideoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */; };
+		FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2391B64A57F00DC262D /* TwitterViewController.m */; };
+		FD88F2451B64A5AB00DC262D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2441B64A5AB00DC262D /* Twitter.framework */; };
+		FD88F2471B64A5B500DC262D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2461B64A5B500DC262D /* Photos.framework */; };
+		FD88F2491B64A5C200DC262D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */; };
+		FD88F24B1B64A5CB00DC262D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F24A1B64A5CB00DC262D /* Social.framework */; };
+		FD88F24D1B64A5D200DC262D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F24C1B64A5D200DC262D /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,15 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		630CEB531FE30BAA1CF68D07 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C48911B13C967727B8B13FFF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4E2C44212D239C048685DB2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FD1B73FA1B41FE8C00E697C0 /* PicoCale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1B73FE1B41FE8C00E697C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD1B73FF1B41FE8C00E697C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD1B74011B41FE8C00E697C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD1B74021B41FE8C00E697C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FD1B74041B41FE8C00E697C0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		FD1B74051B41FE8C00E697C0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		FD1B74071B41FE8C00E697C0 /* ExploreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
-		FD1B74081B41FE8C00E697C0 /* ExploreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		FD1B740B1B41FE8D00E697C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD1B740D1B41FE8D00E697C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD1B74101B41FE8D00E697C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -51,6 +68,35 @@
 		FD1B742E1B421E1900E697C0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		FD1B74301B421E2000E697C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FD1B74321B421E2600E697C0 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		FD88F2171B6421F100DC262D /* libDACircularProgress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDACircularProgress.a; path = "Pods/../build/Debug-iphoneos/libDACircularProgress.a"; sourceTree = "<group>"; };
+		FD88F2191B6421FC00DC262D /* libMWPhotoBrowser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMWPhotoBrowser.a; path = "Pods/../build/Debug-iphoneos/libMWPhotoBrowser.a"; sourceTree = "<group>"; };
+		FD88F21B1B64220300DC262D /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/libSDWebImage.a"; sourceTree = "<group>"; };
+		FD88F21D1B64220A00DC262D /* libMBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMBProgressHUD.a; path = "Pods/../build/Debug-iphoneos/libMBProgressHUD.a"; sourceTree = "<group>"; };
+		FD88F2261B64A57F00DC262D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		FD88F2271B64A57F00DC262D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		FD88F2281B64A57F00DC262D /* FullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullViewController.h; sourceTree = "<group>"; };
+		FD88F2291B64A57F00DC262D /* FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullViewController.m; sourceTree = "<group>"; };
+		FD88F22A1B64A57F00DC262D /* ImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesViewController.h; sourceTree = "<group>"; };
+		FD88F22B1B64A57F00DC262D /* ImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesViewController.m; sourceTree = "<group>"; };
+		FD88F22C1B64A57F00DC262D /* MediaPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPreview.h; sourceTree = "<group>"; };
+		FD88F22D1B64A57F00DC262D /* MediaPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPreview.m; sourceTree = "<group>"; };
+		FD88F22E1B64A57F00DC262D /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		FD88F22F1B64A57F00DC262D /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		FD88F2301B64A57F00DC262D /* PreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewController.h; sourceTree = "<group>"; };
+		FD88F2311B64A57F00DC262D /* PreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewController.m; sourceTree = "<group>"; };
+		FD88F2321B64A57F00DC262D /* PreviewVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewVideoController.h; sourceTree = "<group>"; };
+		FD88F2331B64A57F00DC262D /* PreviewVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewVideoController.m; sourceTree = "<group>"; };
+		FD88F2341B64A57F00DC262D /* TweetDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDisplayView.h; sourceTree = "<group>"; };
+		FD88F2351B64A57F00DC262D /* TweetDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDisplayView.m; sourceTree = "<group>"; };
+		FD88F2361B64A57F00DC262D /* TwitterVideoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterVideoUploader.h; sourceTree = "<group>"; };
+		FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterVideoUploader.m; sourceTree = "<group>"; };
+		FD88F2381B64A57F00DC262D /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
+		FD88F2391B64A57F00DC262D /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
+		FD88F2441B64A5AB00DC262D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		FD88F2461B64A5B500DC262D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FD88F24A1B64A5CB00DC262D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FD88F24C1B64A5D200DC262D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +104,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD88F24D1B64A5D200DC262D /* Accounts.framework in Frameworks */,
+				FD88F24B1B64A5CB00DC262D /* Social.framework in Frameworks */,
+				FD88F2491B64A5C200DC262D /* AssetsLibrary.framework in Frameworks */,
+				FD88F2471B64A5B500DC262D /* Photos.framework in Frameworks */,
+				FD88F2451B64A5AB00DC262D /* Twitter.framework in Frameworks */,
+				FD88F21E1B64220A00DC262D /* libMBProgressHUD.a in Frameworks */,
+				FD88F21C1B64220300DC262D /* libSDWebImage.a in Frameworks */,
+				FD88F21A1B6421FC00DC262D /* libMWPhotoBrowser.a in Frameworks */,
+				FD88F2181B6421F100DC262D /* libDACircularProgress.a in Frameworks */,
 				FD1B74331B421E2600E697C0 /* AVKit.framework in Frameworks */,
 				FD1B74311B421E2000E697C0 /* AVFoundation.framework in Frameworks */,
 				FD1B742F1B421E1900E697C0 /* CoreMotion.framework in Frameworks */,
 				FD1B742D1B421E1000E697C0 /* CoreLocation.framework in Frameworks */,
+				5918EBC5F9D90748761F3825 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +131,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27EDA8F356528175CD35AAF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD88F24C1B64A5D200DC262D /* Accounts.framework */,
+				FD88F24A1B64A5CB00DC262D /* Social.framework */,
+				FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */,
+				FD88F2461B64A5B500DC262D /* Photos.framework */,
+				FD88F2441B64A5AB00DC262D /* Twitter.framework */,
+				FD88F21D1B64220A00DC262D /* libMBProgressHUD.a */,
+				FD88F21B1B64220300DC262D /* libSDWebImage.a */,
+				FD88F2191B6421FC00DC262D /* libMWPhotoBrowser.a */,
+				FD88F2171B6421F100DC262D /* libDACircularProgress.a */,
+				C48911B13C967727B8B13FFF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78E8FF90C6F29E3D0C41F446 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4E2C44212D239C048685DB2 /* Pods.debug.xcconfig */,
+				630CEB531FE30BAA1CF68D07 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FD1B73F11B41FE8C00E697C0 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +167,8 @@
 				FD1B73FC1B41FE8C00E697C0 /* PicoCale */,
 				FD1B74191B41FE8D00E697C0 /* PicoCaleTests */,
 				FD1B73FB1B41FE8C00E697C0 /* Products */,
+				78E8FF90C6F29E3D0C41F446 /* Pods */,
+				27EDA8F356528175CD35AAF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +184,28 @@
 		FD1B73FC1B41FE8C00E697C0 /* PicoCale */ = {
 			isa = PBXGroup;
 			children = (
+				FD88F2261B64A57F00DC262D /* CameraViewController.h */,
+				FD88F2271B64A57F00DC262D /* CameraViewController.m */,
+				FD88F2281B64A57F00DC262D /* FullViewController.h */,
+				FD88F2291B64A57F00DC262D /* FullViewController.m */,
+				FD88F22A1B64A57F00DC262D /* ImagesViewController.h */,
+				FD88F22B1B64A57F00DC262D /* ImagesViewController.m */,
+				FD88F22C1B64A57F00DC262D /* MediaPreview.h */,
+				FD88F22D1B64A57F00DC262D /* MediaPreview.m */,
+				FD88F22E1B64A57F00DC262D /* Photo.h */,
+				FD88F22F1B64A57F00DC262D /* Photo.m */,
+				FD88F2301B64A57F00DC262D /* PreviewController.h */,
+				FD88F2311B64A57F00DC262D /* PreviewController.m */,
+				FD88F2321B64A57F00DC262D /* PreviewVideoController.h */,
+				FD88F2331B64A57F00DC262D /* PreviewVideoController.m */,
+				FD88F2341B64A57F00DC262D /* TweetDisplayView.h */,
+				FD88F2351B64A57F00DC262D /* TweetDisplayView.m */,
+				FD88F2361B64A57F00DC262D /* TwitterVideoUploader.h */,
+				FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */,
+				FD88F2381B64A57F00DC262D /* TwitterViewController.h */,
+				FD88F2391B64A57F00DC262D /* TwitterViewController.m */,
 				FD1B74011B41FE8C00E697C0 /* AppDelegate.h */,
 				FD1B74021B41FE8C00E697C0 /* AppDelegate.m */,
-				FD1B74041B41FE8C00E697C0 /* HomeViewController.h */,
-				FD1B74051B41FE8C00E697C0 /* HomeViewController.m */,
-				FD1B74071B41FE8C00E697C0 /* ExploreViewController.h */,
-				FD1B74081B41FE8C00E697C0 /* ExploreViewController.m */,
 				FD1B740A1B41FE8D00E697C0 /* Main.storyboard */,
 				FD1B740D1B41FE8D00E697C0 /* Images.xcassets */,
 				FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */,
@@ -147,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD1B74201B41FE8D00E697C0 /* Build configuration list for PBXNativeTarget "PicoCale" */;
 			buildPhases = (
+				C5635AE6A4C76DE0DED45D4F /* Check Pods Manifest.lock */,
 				FD1B73F61B41FE8C00E697C0 /* Sources */,
 				FD1B73F71B41FE8C00E697C0 /* Frameworks */,
 				FD1B73F81B41FE8C00E697C0 /* Resources */,
+				DF9EE9CEAD9F7E11E67DE470 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,6 +291,7 @@
 				TargetAttributes = {
 					FD1B73F91B41FE8C00E697C0 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 9VUC3R8D65;
 					};
 					FD1B74151B41FE8D00E697C0 = {
 						CreatedOnToolsVersion = 6.2;
@@ -235,14 +338,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C5635AE6A4C76DE0DED45D4F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF9EE9CEAD9F7E11E67DE470 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD1B73F61B41FE8C00E697C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD1B74091B41FE8D00E697C0 /* ExploreViewController.m in Sources */,
+				FD88F23E1B64A57F00DC262D /* Photo.m in Sources */,
+				FD88F23A1B64A57F00DC262D /* CameraViewController.m in Sources */,
+				FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */,
+				FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */,
+				FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */,
+				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
+				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,
+				FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */,
+				FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */,
 				FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */,
-				FD1B74061B41FE8C00E697C0 /* HomeViewController.m in Sources */,
+				FD88F2421B64A57F00DC262D /* TwitterVideoUploader.m in Sources */,
 				FD1B74001B41FE8C00E697C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,20 +507,32 @@
 		};
 		FD1B74211B41FE8D00E697C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4E2C44212D239C048685DB2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PicoCale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		FD1B74221B41FE8D00E697C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 630CEB531FE30BAA1CF68D07 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PicoCale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  PicoCale
+//  manantha_Universal_Multimedia
 //
-//  Created by Manishgant on 6/29/15.
+//  Created by Manishgant on 7/4/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
