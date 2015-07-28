@@ -13,8 +13,8 @@
 - (NSString*)stringByAddingURLEncoding
 {
   static CFStringRef specialCharacters = CFSTR("% /'\"?=&+<>;:!");
-  NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL, specialCharacters, kCFStringEncodingUTF8);
-  return [result autorelease];
+  NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL, specialCharacters, kCFStringEncodingUTF8));
+  return result;
 }
 
 - (NSString*)stringWithOAuthEncoding

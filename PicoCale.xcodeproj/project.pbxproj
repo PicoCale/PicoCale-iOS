@@ -40,7 +40,6 @@
 		FD88F2761B66F89E00DC262D /* libSBJson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2751B66F89E00DC262D /* libSBJson.a */; };
 		FD88F2881B6700C700DC262D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2831B6700C700DC262D /* NSData+Base64.m */; };
 		FD88F2891B6700C700DC262D /* NSString+URLEncodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */; };
-		FD88F28A1B6700C700DC262D /* RXFlickr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2871B6700C700DC262D /* RXFlickr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +108,6 @@
 		FD88F2831B6700C700DC262D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		FD88F2841B6700C700DC262D /* NSString+URLEncodeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncodeString.h"; sourceTree = "<group>"; };
 		FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncodeString.m"; sourceTree = "<group>"; };
-		FD88F2861B6700C700DC262D /* RXFlickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXFlickr.h; sourceTree = "<group>"; };
-		FD88F2871B6700C700DC262D /* RXFlickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXFlickr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,8 +234,6 @@
 				FD88F2831B6700C700DC262D /* NSData+Base64.m */,
 				FD88F2841B6700C700DC262D /* NSString+URLEncodeString.h */,
 				FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */,
-				FD88F2861B6700C700DC262D /* RXFlickr.h */,
-				FD88F2871B6700C700DC262D /* RXFlickr.m */,
 				FD1B73FE1B41FE8C00E697C0 /* Info.plist */,
 				FD1B73FF1B41FE8C00E697C0 /* main.m */,
 			);
@@ -406,7 +401,6 @@
 				FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */,
 				FD88F2881B6700C700DC262D /* NSData+Base64.m in Sources */,
 				FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */,
-				FD88F28A1B6700C700DC262D /* RXFlickr.m in Sources */,
 				FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */,
 				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
 				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,

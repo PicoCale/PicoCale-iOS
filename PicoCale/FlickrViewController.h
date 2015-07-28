@@ -12,13 +12,12 @@
 #import "Photo.h"
 #import "SettingsController.h"
 #import <ObjectiveFlickr.h>
-#import "RXFlickr.h"
 
 
 @import CoreLocation;
 
 
-@interface FlickrViewController : UICollectionViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,OFFlickrAPIRequestDelegate,RXFlickrDelegate,NSURLSessionDownloadDelegate,UIApplicationDelegate>
+@interface FlickrViewController : UICollectionViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,OFFlickrAPIRequestDelegate,NSURLSessionDownloadDelegate,UIApplicationDelegate>
 
 @property (nonatomic, strong) NSMutableArray *photos;
 
