@@ -46,14 +46,14 @@
     if (noPhotosAlerts != nil) {
         self.noPhotosAlertTextField.text = noPhotosAlerts;
     }
-    
+    /*
     if(notificationOn) {
         [self.notificationToggle setOn:TRUE animated:YES];
     
     } else {
         [self.notificationToggle setOn:FALSE animated:YES];
     }
-    
+    */
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
     [singleTap setNumberOfTapsRequired:1];

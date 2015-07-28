@@ -17,36 +17,20 @@
 @import CoreLocation;
 
 
-@interface FlickrViewController : UICollectionViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,OFFlickrAPIRequestDelegate,NSURLSessionDownloadDelegate,UIApplicationDelegate>
+@interface FlickrViewController : UIViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,OFFlickrAPIRequestDelegate,NSURLSessionDownloadDelegate,UIApplicationDelegate>
 
-@property (nonatomic, strong) NSMutableArray *photos;
+{
+    OFFlickrAPIRequest *flickrRequest;
+    
+    UIImagePickerController *imagePicker;
+    
+    UILabel *authorizeDescriptionLabel;
+    UILabel *snapPictureDescriptionLabel;
+    UIButton *authorizeButton;
+    UIButton *snapPictureButton;
+}
+- (IBAction)authorizeAction;
 
-@property (nonatomic, strong) UIImage *image;
-
-@property (nonatomic, strong) ALAsset *assetInfo;
-
-@property (weak, nonatomic) IBOutlet UINavigationItem *titleBarForImages;
-
-@property (nonatomic, weak) NSMutableArray *photoInfo;
-
-@property (nonatomic, strong) SettingsController *sc;
-
-@property (nonatomic, strong) NSMutableString *radius_C;
-
-@property (nonatomic) OFFlickrAPIContext *flickrContext;
-@property (nonatomic) OFFlickrAPIRequest *flickrRequest;
-@property (nonatomic) NSString *nextPhotoTitle;
-@property (nonatomic) NSURLSession *urlSession;
-@property (nonatomic) NSURLSessionDownloadTask *imageDownloadTask;
-@property (weak, nonatomic) NSTimer *fetchTimer;
-
-+(NSMutableString *)getRadius_C;
-
-+(NSString *)getnoPhotos;
-
-+(void)setRadius_C:(NSMutableString *)value;
-
-+ (ALAssetsLibrary *)defaultAssetsLibrary;
 
 
 @end

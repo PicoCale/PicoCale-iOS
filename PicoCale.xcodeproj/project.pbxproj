@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4E282D45A2A63276133F540A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D95D83BBE3AF7C9D9C1646 /* libPods.a */; };
 		FD1B74001B41FE8C00E697C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B73FF1B41FE8C00E697C0 /* main.m */; };
-		FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B74021B41FE8C00E697C0 /* AppDelegate.m */; };
-		FD1B740C1B41FE8D00E697C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740A1B41FE8D00E697C0 /* Main.storyboard */; };
 		FD1B740E1B41FE8D00E697C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740D1B41FE8D00E697C0 /* Images.xcassets */; };
 		FD1B74111B41FE8D00E697C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */; };
 		FD1B741D1B41FE8D00E697C0 /* PicoCaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B741C1B41FE8D00E697C0 /* PicoCaleTests.m */; };
@@ -35,11 +33,13 @@
 		FD88F24D1B64A5D200DC262D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F24C1B64A5D200DC262D /* Accounts.framework */; };
 		FD88F2501B653CDC00DC262D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F24F1B653CDC00DC262D /* Constants.m */; };
 		FD88F2531B654CB100DC262D /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2521B654CB100DC262D /* SettingsController.m */; };
-		FD88F2721B66E5C800DC262D /* FlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2711B66E5C800DC262D /* FlickrViewController.m */; };
 		FD88F2741B66F89800DC262D /* libobjectiveflickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2731B66F89800DC262D /* libobjectiveflickr.a */; };
 		FD88F2761B66F89E00DC262D /* libSBJson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2751B66F89E00DC262D /* libSBJson.a */; };
 		FD88F2881B6700C700DC262D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2831B6700C700DC262D /* NSData+Base64.m */; };
 		FD88F2891B6700C700DC262D /* NSString+URLEncodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */; };
+		FD88F2AA1B67E68F00DC262D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD88F2A81B67E68F00DC262D /* Main.storyboard */; };
+		FD88F2BC1B68169800DC262D /* SnapAndRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */; };
+		FD88F2BF1B681F0E00DC262D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2BE1B681F0E00DC262D /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +59,6 @@
 		FD1B73FA1B41FE8C00E697C0 /* PicoCale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1B73FE1B41FE8C00E697C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD1B73FF1B41FE8C00E697C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FD1B74011B41FE8C00E697C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FD1B74021B41FE8C00E697C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FD1B740B1B41FE8D00E697C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD1B740D1B41FE8D00E697C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD1B74101B41FE8D00E697C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FD1B74161B41FE8D00E697C0 /* PicoCaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicoCaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,14 +97,18 @@
 		FD88F24F1B653CDC00DC262D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		FD88F2521B654CB100DC262D /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 		FD88F2541B654E0100DC262D /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
-		FD88F2701B66E5B500DC262D /* FlickrViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrViewController.h; sourceTree = "<group>"; };
-		FD88F2711B66E5C800DC262D /* FlickrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrViewController.m; sourceTree = "<group>"; };
 		FD88F2731B66F89800DC262D /* libobjectiveflickr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libobjectiveflickr.a; path = "Pods/../build/Debug-iphoneos/libobjectiveflickr.a"; sourceTree = "<group>"; };
 		FD88F2751B66F89E00DC262D /* libSBJson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSBJson.a; path = "Pods/../build/Debug-iphoneos/libSBJson.a"; sourceTree = "<group>"; };
 		FD88F2821B6700C700DC262D /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		FD88F2831B6700C700DC262D /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		FD88F2841B6700C700DC262D /* NSString+URLEncodeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncodeString.h"; sourceTree = "<group>"; };
 		FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncodeString.m"; sourceTree = "<group>"; };
+		FD88F2A01B67E4E800DC262D /* SampleAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAPIKey.h; sourceTree = "<group>"; };
+		FD88F2A91B67E68F00DC262D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD88F2B91B68169800DC262D /* SnapAndRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapAndRunViewController.h; sourceTree = "<group>"; };
+		FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapAndRunViewController.m; sourceTree = "<group>"; };
+		FD88F2BD1B681F0E00DC262D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FD88F2BE1B681F0E00DC262D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +192,12 @@
 		FD1B73FC1B41FE8C00E697C0 /* PicoCale */ = {
 			isa = PBXGroup;
 			children = (
+				FD88F2BD1B681F0E00DC262D /* AppDelegate.h */,
+				FD88F2BE1B681F0E00DC262D /* AppDelegate.m */,
+				FD88F2B91B68169800DC262D /* SnapAndRunViewController.h */,
+				FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */,
+				FD88F2A81B67E68F00DC262D /* Main.storyboard */,
+				FD88F2A01B67E4E800DC262D /* SampleAPIKey.h */,
 				FD88F24E1B653CCB00DC262D /* Constants.h */,
 				FD88F24F1B653CDC00DC262D /* Constants.m */,
 				FD88F2261B64A57F00DC262D /* CameraViewController.h */,
@@ -199,8 +206,6 @@
 				FD88F2291B64A57F00DC262D /* FullViewController.m */,
 				FD88F22A1B64A57F00DC262D /* ImagesViewController.h */,
 				FD88F22B1B64A57F00DC262D /* ImagesViewController.m */,
-				FD88F2701B66E5B500DC262D /* FlickrViewController.h */,
-				FD88F2711B66E5C800DC262D /* FlickrViewController.m */,
 				FD88F22C1B64A57F00DC262D /* MediaPreview.h */,
 				FD88F22D1B64A57F00DC262D /* MediaPreview.m */,
 				FD88F22E1B64A57F00DC262D /* Photo.h */,
@@ -215,11 +220,8 @@
 				FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */,
 				FD88F2381B64A57F00DC262D /* TwitterViewController.h */,
 				FD88F2391B64A57F00DC262D /* TwitterViewController.m */,
-				FD1B74011B41FE8C00E697C0 /* AppDelegate.h */,
-				FD1B74021B41FE8C00E697C0 /* AppDelegate.m */,
 				FD88F2541B654E0100DC262D /* SettingsController.h */,
 				FD88F2521B654CB100DC262D /* SettingsController.m */,
-				FD1B740A1B41FE8D00E697C0 /* Main.storyboard */,
 				FD1B740D1B41FE8D00E697C0 /* Images.xcassets */,
 				FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */,
 				FD1B73FD1B41FE8C00E697C0 /* Supporting Files */,
@@ -340,7 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD1B740C1B41FE8D00E697C0 /* Main.storyboard in Resources */,
+				FD88F2AA1B67E68F00DC262D /* Main.storyboard in Resources */,
 				FD1B74111B41FE8D00E697C0 /* LaunchScreen.xib in Resources */,
 				FD1B740E1B41FE8D00E697C0 /* Images.xcassets in Resources */,
 			);
@@ -394,8 +396,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD88F23E1B64A57F00DC262D /* Photo.m in Sources */,
-				FD88F2721B66E5C800DC262D /* FlickrViewController.m in Sources */,
 				FD88F23A1B64A57F00DC262D /* CameraViewController.m in Sources */,
+				FD88F2BF1B681F0E00DC262D /* AppDelegate.m in Sources */,
 				FD88F2891B6700C700DC262D /* NSString+URLEncodeString.m in Sources */,
 				FD88F2531B654CB100DC262D /* SettingsController.m in Sources */,
 				FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */,
@@ -404,10 +406,10 @@
 				FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */,
 				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
 				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,
+				FD88F2BC1B68169800DC262D /* SnapAndRunViewController.m in Sources */,
 				FD88F2501B653CDC00DC262D /* Constants.m in Sources */,
 				FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */,
 				FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */,
-				FD1B74031B41FE8C00E697C0 /* AppDelegate.m in Sources */,
 				FD88F2421B64A57F00DC262D /* TwitterVideoUploader.m in Sources */,
 				FD1B74001B41FE8C00E697C0 /* main.m in Sources */,
 			);
@@ -432,20 +434,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FD1B740A1B41FE8D00E697C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD1B740B1B41FE8D00E697C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FD1B74101B41FE8D00E697C0 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FD88F2A81B67E68F00DC262D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD88F2A91B67E68F00DC262D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

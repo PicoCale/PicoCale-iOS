@@ -199,10 +199,6 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
         {
             
         } else {
-            
-            NSString *tempString = [ImagesViewController getnoPhotos];
-            
-            if (self.photos.count >= [tempString integerValue]) {
                 
                 UILocalNotification *localNotification = [[UILocalNotification alloc] init];
                 localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
@@ -211,7 +207,6 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
                 localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
                 
                 [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-            }
         }
         
     }

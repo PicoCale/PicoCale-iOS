@@ -1,17 +1,17 @@
 //
-//  AppDelegate.h
-//  manantha_Universal_Multimedia
+//  FlickrViewAppDelegate.h
+//  PicoCale
 //
-//  Created by Manishgant on 7/4/15.
+//  Created by Manishgant on 7/28/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
-#import<UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 #import "ObjectiveFlickr.h"
 
 extern NSString *SnapAndRunShouldUpdateAuthInfoNotification;
 
-@interface AppDelegate : NSObject <UIApplicationDelegate, OFFlickrAPIRequestDelegate>
+@interface FlickrViewAppDelegate : NSObject <UIApplicationDelegate, OFFlickrAPIRequestDelegate>
 {
     UINavigationController *viewController;
     UIWindow *window;
@@ -26,7 +26,7 @@ extern NSString *SnapAndRunShouldUpdateAuthInfoNotification;
     NSString *flickrUserName;
 }
 
-+ (AppDelegate *)sharedDelegate;
++ (SnapAndRunAppDelegate *)sharedDelegate;
 - (void)setAndStoreFlickrAuthToken:(NSString *)inAuthToken secret:(NSString *)inSecret;
 
 - (IBAction)cancelAction;

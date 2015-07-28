@@ -1,5 +1,5 @@
 //
-// SnapAndRunViewController.h
+// SampleAPIKey.h
 //
 // Copyright (c) 2009 Lukhnos D. Liu (http://lukhnos.org)
 //
@@ -23,31 +23,5 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
-//
-
-#import <UIKit/UIKit.h>
-#import "ObjectiveFlickr.h"
-#import "AppDelegate.h"
-
-@interface SnapAndRunViewController : UIViewController <OFFlickrAPIRequestDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-{
-    OFFlickrAPIRequest *flickrRequest;
-    
-    UIImagePickerController *imagePicker;
-    
-    UILabel *authorizeDescriptionLabel;
-    UILabel *snapPictureDescriptionLabel;
-    UIButton *authorizeButton;
-    UIButton *snapPictureButton;
-}
-- (IBAction)authorizeAction;
-- (IBAction)snapPictureAction;
-
-@property (nonatomic, retain) IBOutlet UILabel *authorizeDescriptionLabel;
-@property (nonatomic, retain) IBOutlet UILabel *snapPictureDescriptionLabel;
-@property (nonatomic, retain) IBOutlet UIButton *snapPictureButton;
-@property (nonatomic, retain) IBOutlet UIButton *authorizeButton;
-
-@property (nonatomic, retain) OFFlickrAPIRequest *flickrRequest;
-@property (nonatomic, retain) UIImagePickerController *imagePicker;
-@end
+#define OBJECTIVE_FLICKR_SAMPLE_API_KEY             @"4bd53aa5f4c2ff55b7fdaa6a067ab915"
+#define OBJECTIVE_FLICKR_SAMPLE_API_SHARED_SECRET   @"156d6d81cb6efc97"

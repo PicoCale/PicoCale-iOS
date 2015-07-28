@@ -1,43 +1,14 @@
 //
-//  AppDelegate.m
-//  manantha_Universal_Multimedia
+//  FlickrViewAppDelegate.m
+//  PicoCale
 //
-//  Created by Manishgant on 7/4/15.
+//  Created by Manishgant on 7/28/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "SnapAndRunViewController.h"
+#import "FlickrViewAppDelegate.h"
+#import "FlickrViewController.h"
 #import "SampleAPIKey.h"
-
-@interface AppDelegate ()
-
-@end
-
-@implementation AppDelegate
-
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
-    
-    if ([self.flickrContext.OAuthToken length]) {
-        [self flickrRequest].sessionInfo = kCheckTokenStep;
-        [flickrRequest callAPIMethodWithGET:@"flickr.test.login" arguments:nil];
-        
-        [activityIndicator startAnimating];
-        [viewController.view addSubview:progressView];
-    }
-    
-    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge
-                                                                                                              categories:nil]];
-    }
-    return YES;
-}
-
-
 
 NSString *SnapAndRunShouldUpdateAuthInfoNotification = @"SnapAndRunShouldUpdateAuthInfoNotification";
 
@@ -48,8 +19,9 @@ NSString *kStoredAuthTokenSecretKeyName = @"FlickrOAuthTokenSecret";
 NSString *kGetAccessTokenStep = @"kGetAccessTokenStep";
 NSString *kCheckTokenStep = @"kCheckTokenStep";
 
-NSString *SRCallbackURLBaseString = @"picocale://callback";
+NSString *SRCallbackURLBaseString = @"picocale://auth";
 
+@implementation FlickrViewAppDelegate
 
 - (OFFlickrAPIRequest *)flickrRequest
 {
@@ -86,11 +58,24 @@ NSString *SRCallbackURLBaseString = @"picocale://callback";
     return YES;
 }
 
-
-
-+ (AppDelegate *)sharedDelegate
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [window addSubview:viewController.view];
+    [window makeKeyAndVisible];
+    
+    if ([self.flickrContext.OAuthToken length]) {
+        [self flickrRequest].sessionInfo = kCheckTokenStep;
+        [flickrRequest callAPIMethodWithGET:@"flickr.test.login" arguments:nil];
+        
+        [activityIndicator startAnimating];
+        [viewController.view addSubview:progressView];
+    }
+    return YES;
+}
+
++ (FlickrViewAppDelegate *)sharedDelegate
+{
+    return (FlickrViewAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)cancelAction
@@ -174,8 +159,6 @@ NSString *SRCallbackURLBaseString = @"picocale://callback";
     [[[UIAlertView alloc] initWithTitle:@"API Failed" message:[inError description] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
     [[NSNotificationCenter defaultCenter] postNotificationName:SnapAndRunShouldUpdateAuthInfoNotification object:self];
 }
-
-
 
 @synthesize viewController;
 @synthesize window;
