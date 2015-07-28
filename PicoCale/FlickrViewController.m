@@ -1,4 +1,12 @@
 //
+//  FlickrViewController.m
+//  PicoCale
+//
+//  Created by Manishgant on 7/27/15.
+//  Copyright (c) 2015 Manishgant. All rights reserved.
+//
+
+//
 //  ImagesViewController.m
 //  manantha_Universal_Multimedia
 //
@@ -6,35 +14,42 @@
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
 
-#import "ImagesViewController.h"
+#import "FlickrViewController.h"
 #import "FullViewController.h"
-#import "Photo.h"
-#import "Math.h"
-#import "SettingsController.h"
+#import <OFUtilities.h>
 
+static NSString* kConsumerKey = @"4bd53aa5f4c2ff55b7fdaa6a067ab915";
+static NSString *kOAuthAuth = @"OAuth";
+static NSString* kConsumerSecret = @"156d6d81cb6efc97";
+static NSString* kCallbackURLBaseString = @"picocale://callback";
 
-@interface ImagesViewController ()
+@interface FlickrViewController ()
+
 
 {
     CLLocationManager *locationManager;
     
     CLLocation *currentLocation;
     
+     NSString *flickrUserName;
+    
+    
 }
 
 
 @end
 
-@implementation ImagesViewController
+@implementation FlickrViewController
 
 
 static NSMutableString *radius_CC = (NSMutableString *) @"5";
 static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
 
-+(NSString *)getRadius_C{
+
++(NSMutableString *)getRadius_C{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *geoRadius = [defaults objectForKey:@"geoRadius"];
+    NSMutableString *geoRadius = [defaults objectForKey:@"geoRadius"];
     if (geoRadius != nil){
         return geoRadius;
     } else {
@@ -105,7 +120,7 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
 {
     [super viewWillAppear:animated];
     
-    [[self titleBarForImages] setTitle:[NSString stringWithFormat:@"Photos within %@ mile radius",[ImagesViewController getRadius_C]]];
+    [[self titleBarForImages] setTitle:[NSString stringWithFormat:@"Photos within %@ mile radius",[FlickrViewController getRadius_C]]];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myGridImage"];
     
     [self->locationManager startUpdatingLocation];
@@ -118,74 +133,88 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
 }
 
 -(void) disPlayLocationBasedPictures:(CLLocation *)location {
+        //NSLog(@"%f %f %f %f",minLatitude,minLongitude,maxLatitude,maxLongitude);
+    self.flickrContext = [[OFFlickrAPIContext alloc] initWithAPIKey:kConsumerKey sharedSecret:kConsumerSecret];
     
-    double maxLatitude,minLatitude;
-    double maxLongitude,minLongitude;
-    double radius;
+    OFFlickrAPIRequest *request = [[OFFlickrAPIRequest alloc] initWithAPIContext:self.flickrContext];
     
-    if (self.radius_C == nil) {
-        radius = [[ImagesViewController getRadius_C] doubleValue];
-        NSLog(@"Radius : %f",radius);
-    } else {
-        radius = [self.radius_C doubleValue];
-        NSLog(@"Radius : %f",radius);
-    }
-    // collect the photos
+    // set the delegate, here we assume it's the controller that's creating the request object
     
+    request.sessionInfo = kOAuthAuth;
+    [request setDelegate:self];
     
-    NSMutableArray *collector = [[NSMutableArray alloc] initWithCapacity:0];
-    ALAssetsLibrary *al = [ImagesViewController defaultAssetsLibrary];
+    [request fetchOAuthRequestTokenWithCallbackURL:[NSURL URLWithString:kCallbackURLBaseString]];
+}
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didObtainOAuthRequestToken:(NSString *)inRequestToken secret:(NSString *)inSecret;
+{
+    self.flickrContext.OAuthToken = inRequestToken;
+    self.flickrContext.OAuthTokenSecret = inSecret;
     
-    
-    maxLatitude = [self getMaxLatitude:location radius:radius];
-    
-    maxLongitude = [self getMaxLongitude:location radius:radius];
-    
-    
-    minLatitude = [self getMinLatitude:location radius:radius];
-    
-    
-    minLongitude = [self getMinLongitude:location radius:radius];
-    
-    //NSLog(@"%f %f %f %f",minLatitude,minLongitude,maxLatitude,maxLongitude);
-    
-    
-    [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos
-                      usingBlock:^(ALAssetsGroup *group, BOOL *stop)
-     {
-         [group enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:^(ALAsset *asset, NSUInteger index, BOOL *stop)
-          {
-              if (asset) {
-                  
-                  //ALAssetRepresentation *representation = [asset defaultRepresentation];
-                  CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
-                  
-                  double image_Latitude = location.coordinate.latitude;
-                  double image_Longitude= location.coordinate.longitude;
-                  
-                  
-                  if ((image_Latitude > minLatitude) && (image_Latitude < maxLatitude) ) {
-                      
-                      if((image_Longitude < minLongitude) && (image_Longitude > maxLongitude)) {
-                          
-                          [collector addObject:asset];
-                          
-                          // NSLog(@"Image %@ Latitude = %f Longitude = %f",[representation filename],image_Latitude,image_Longitude);
-                      }
-                  }
-                  
-              }
-          }];
-         
-         self.photos = collector;
-         
-         
-     }
-                    failureBlock:^(NSError *error) { NSLog(@"Error retrieving photos");}
-     ];
-    
+    NSURL *authURL = [self.flickrContext userAuthorizationURLWithRequestToken:inRequestToken requestedPermission:OFFlickrWritePermission];
+    NSLog(@"Auth URL: %@", [authURL absoluteString]);
+    [[UIApplication sharedApplication] openURL:authURL];
     
 }
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
+{
+    NSLog(@"%s, error: %@", __PRETTY_FUNCTION__, inError);
+
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([self flickrRequest].sessionInfo) {
+        // already running some other request
+        NSLog(@"Already running some other request");
+    }
+    else {
+        NSString *token = nil;
+        NSString *verifier = nil;
+        BOOL result = OFExtractOAuthCallback(url, [NSURL URLWithString:kCallbackURLBaseString], &token, &verifier);
+        
+        if (!result) {
+            NSLog(@"Cannot obtain token/secret from URL: %@", [url absoluteString]);
+            return NO;
+        }
+        
+        [self flickrRequest].sessionInfo = kOAuthAuth;
+        [self.flickrRequest fetchOAuthAccessTokenWithRequestToken:token verifier:verifier];
+            
+    }
+    
+    return YES;
+}
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didObtainOAuthAccessToken:(NSString *)inAccessToken secret:(NSString *)inSecret userFullName:(NSString *)inFullName userName:(NSString *)inUserName userNSID:(NSString *)inNSID
+{
+    [self setAndStoreFlickrAuthToken:inAccessToken secret:inSecret];
+    self->flickrUserName = inUserName;
+    
+    [self flickrRequest].sessionInfo = nil;
+}
+
+- (void)setAndStoreFlickrAuthToken:(NSString *)inAuthToken secret:(NSString *)inSecret
+{
+    if (![inAuthToken length] || ![inSecret length]) {
+        self.flickrContext.OAuthToken = nil;
+        self.flickrContext.OAuthTokenSecret = nil;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kConsumerKey];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kConsumerSecret];
+        
+    }
+    else {
+        self.flickrContext.OAuthToken = inAuthToken;
+        self.flickrContext.OAuthTokenSecret = inSecret;
+        [[NSUserDefaults standardUserDefaults] setObject:inAuthToken forKey:kConsumerKey];
+        [[NSUserDefaults standardUserDefaults] setObject:inSecret forKey:kConsumerSecret];
+    }
+}
+
+
+
+
 
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -200,7 +229,7 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
             
         } else {
             
-            NSString *tempString = [ImagesViewController getnoPhotos];
+            NSString *tempString = [FlickrViewController getnoPhotos];
             
             if (self.photos.count >= [tempString integerValue]) {
                 
@@ -211,6 +240,8 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
                 localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
                 
                 [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+                
+                
             }
         }
         
@@ -372,6 +403,7 @@ static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     double radius;
     SettingsController *sc = [[SettingsController alloc]init];

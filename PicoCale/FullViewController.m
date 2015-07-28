@@ -11,6 +11,7 @@
 
 
 
+
 @interface FullViewController()
 
 
@@ -31,5 +32,9 @@
     self.fullImageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size= self->_displayImage.size};
     
 }
+
+
+- (IBAction)FBShareButtonPressed:(id)sender {
+    }
 
 @end

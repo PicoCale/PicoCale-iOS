@@ -138,6 +138,7 @@
         
         [tweetSheet addImage:self->_displayImage];
         
+        
         [self presentViewController:tweetSheet animated:YES completion:^(void) {
             NSLog(@"Photo Uploaded to Twitter");
             [self imageUploadedInform];

@@ -22,6 +22,9 @@
 
 @property (weak, nonatomic) NSString *radius_C;
 
+@property (weak, nonatomic) IBOutlet UITextField *noPhotosAlertTextField;
+
+@property (weak, nonatomic) IBOutlet UISwitch *notificationToggle;
 
 @end
 
