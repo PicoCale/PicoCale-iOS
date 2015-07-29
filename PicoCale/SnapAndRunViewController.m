@@ -1,32 +1,9 @@
-//
-// SnapAndRunViewController.m
-//
-// Copyright (c) 2009 Lukhnos D. Liu (http://lukhnos.org)
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the "Software"), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-//
 
 #import "SnapAndRunViewController.h"
 #import "AppDelegate.h"
+#import "FlickrPhoto.h"
+#import "Flickr.h"
+#import "FlickrViewController.h"
 
 NSString *kFetchRequestTokenStep = @"kFetchRequestTokenStep";
 NSString *kGetUserInfoStep = @"kGetUserInfoStep";
@@ -39,19 +16,6 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 
 
 @implementation SnapAndRunViewController
-- (void)viewDidUnload
-{
-    self.flickrRequest = nil;
-    self.imagePicker = nil;
-    
-    self.authorizeButton = nil;
-    self.authorizeDescriptionLabel = nil;
-    self.snapPictureButton = nil;
-    self.snapPictureDescriptionLabel = nil;
-	
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 
 - (void)viewDidLoad
 {
@@ -69,6 +33,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 {
 	[super viewWillAppear:animated];
 	[self updateUserInterface:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,9 +58,9 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 		snapPictureButton.enabled = YES;
 	}
 	else {
-		[authorizeButton setTitle:@"Authorize" forState:UIControlStateNormal];
-		[authorizeButton setTitle:@"Authorize" forState:UIControlStateHighlighted];
-		[authorizeButton setTitle:@"Authorize" forState:UIControlStateDisabled];
+		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateNormal];
+		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateHighlighted];
+		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateDisabled];
 		
 		authorizeDescriptionLabel.text = @"Login to Flickr";		
 		snapPictureButton.enabled = NO;
@@ -109,10 +74,10 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 	}
 	else {
 		if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-			[snapPictureButton setTitle:@"Snap" forState:UIControlStateNormal];
-			[snapPictureButton setTitle:@"Snap" forState:UIControlStateHighlighted];
-			[snapPictureButton setTitle:@"Snap" forState:UIControlStateDisabled];
-			snapPictureDescriptionLabel.text = @"Use camera";
+			[snapPictureButton setTitle:@"Get Photos" forState:UIControlStateNormal];
+			[snapPictureButton setTitle:@"Get Photos" forState:UIControlStateHighlighted];
+			[snapPictureButton setTitle:@"Get Photos" forState:UIControlStateDisabled];
+			snapPictureDescriptionLabel.text = @"Get Photos from Location";
 		}
 		else {
 			[snapPictureButton setTitle:@"Pick Picture" forState:UIControlStateNormal];
@@ -129,13 +94,9 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 
 - (IBAction)snapPictureAction
 {
-	if ([self.flickrRequest isRunning]) {
-		[self.flickrRequest cancel];
-		[self updateUserInterface:nil];		
-		return;
-	}
-	
-    [self presentModalViewController:self.imagePicker animated:YES];
+    if (![flickrRequest isRunning]) {
+        [flickrRequest callAPIMethodWithGET:@"flickr.photos.getRecent" arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"20", @"per_page", nil]];
+    }
 }
 
 - (IBAction)authorizeAction
@@ -164,14 +125,53 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     [[UIApplication sharedApplication] openURL:authURL];    
 }
 
+-(NSString *)flickrPhotoURLforPhoto:(FlickrPhoto *) flickrPhoto size:(NSString *) size
+{
+    if(!size)
+    {
+        size = @"m";
+    }
+    return [NSString stringWithFormat:@"http://farm%ld.staticflickr.com/%ld/%lld_%@_%@.jpg",(long)flickrPhoto.farm,(long)flickrPhoto.server,flickrPhoto.photoID,flickrPhoto.secret,size];
+}
+
+
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didCompleteWithResponse:(NSDictionary *)inResponseDictionary
 {
+    //NSDictionary *photoDict = [[inResponseDictionary valueForKeyPath:@"photos.photo"] objectAtIndex:0];
+    
+    //NSString *title = [photoDict objectForKey:@"title"];
+   // NSLog(@"PhotoTitle : %@",title);
+    
     NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, inRequest.sessionInfo, inResponseDictionary);
     
+    NSArray *objPhotos = inResponseDictionary[@"photos"][@"photo"];
+    
+    NSMutableArray *flickrPhotos = [@[] mutableCopy];
+    self.flickrPics = [[NSMutableArray alloc] initWithCapacity:0 ];
+    for(NSMutableDictionary *objPhoto in objPhotos)
+    {
+        FlickrPhoto *photo = [[FlickrPhoto alloc] init];
+        photo.farm = [objPhoto[@"farm"] intValue];
+        photo.server = [objPhoto[@"server"] intValue];
+        photo.secret = objPhoto[@"secret"];
+        photo.photoID = [objPhoto[@"id"] longLongValue];
+        
+        NSString *searchURL = [Flickr flickrPhotoURLForFlickrPhoto:photo size:@"m"];
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:searchURL] options:0 error:nil];
+        UIImage *image = [UIImage imageWithData:imageData];
+        photo.thumbnail = image;
+        
+        [flickrPhotos addObject:photo];
+        [self.flickrPics addObject:photo];
+    }
+    
+    //self.flickrPics = flickrPhotos;
+   [self performSegueWithIdentifier:@"viewFlickrPics" sender:self.flickrPics];
+    /*
 	if (inRequest.sessionInfo == kUploadImageStep) {
 		snapPictureDescriptionLabel.text = @"Setting properties...";
 
-        
+     
         NSLog(@"%@", inResponseDictionary);
         NSString *photoID = [[inResponseDictionary valueForKeyPath:@"photoid"] textContent];
 
@@ -181,11 +181,20 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     else if (inRequest.sessionInfo == kSetImagePropertiesStep) {
 		[self updateUserInterface:nil];		
 		snapPictureDescriptionLabel.text = @"Done";
+     */
+  //  [UIApplication sharedApplication].idleTimerDisabled = NO;
         
-		[UIApplication sharedApplication].idleTimerDisabled = NO;		
-        
-    }
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    FlickrViewController *fVC = [segue destinationViewController];
+    
+    fVC.flickrPhotos = self.flickrPics;
+    
+}
+
+
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
 {
@@ -291,7 +300,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 
 @synthesize flickrRequest;
 @synthesize imagePicker;
-
+    @synthesize flickrPics;
 @synthesize authorizeButton;
 @synthesize authorizeDescriptionLabel;
 @synthesize snapPictureButton;
