@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E282D45A2A63276133F540A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D95D83BBE3AF7C9D9C1646 /* libPods.a */; };
+		FD1944641B698F4F0078B881 /* LocationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1944631B698F4F0078B881 /* LocationListController.m */; };
 		FD1B74001B41FE8C00E697C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B73FF1B41FE8C00E697C0 /* main.m */; };
 		FD1B740E1B41FE8D00E697C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740D1B41FE8D00E697C0 /* Images.xcassets */; };
 		FD1B74111B41FE8D00E697C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1B740F1B41FE8D00E697C0 /* LaunchScreen.xib */; };
@@ -59,6 +60,8 @@
 		630CEB531FE30BAA1CF68D07 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C4E2C44212D239C048685DB2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D2D95D83BBE3AF7C9D9C1646 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1944621B698F3D0078B881 /* LocationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationListController.h; sourceTree = "<group>"; };
+		FD1944631B698F4F0078B881 /* LocationListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListController.m; sourceTree = "<group>"; };
 		FD1B73FA1B41FE8C00E697C0 /* PicoCale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoCale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1B73FE1B41FE8C00E697C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD1B73FF1B41FE8C00E697C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				FD88F2BD1B681F0E00DC262D /* AppDelegate.h */,
 				FD88F2BE1B681F0E00DC262D /* AppDelegate.m */,
 				FD88F2C31B683C3F00DC262D /* FlickrViewController.h */,
+				FD1944621B698F3D0078B881 /* LocationListController.h */,
+				FD1944631B698F4F0078B881 /* LocationListController.m */,
 				FD88F2C41B683C3F00DC262D /* FlickrViewController.m */,
 				FD88F2B91B68169800DC262D /* SnapAndRunViewController.h */,
 				FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */,
@@ -410,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1944641B698F4F0078B881 /* LocationListController.m in Sources */,
 				FD88F23E1B64A57F00DC262D /* Photo.m in Sources */,
 				FD88F23A1B64A57F00DC262D /* CameraViewController.m in Sources */,
 				FD88F2BF1B681F0E00DC262D /* AppDelegate.m in Sources */,

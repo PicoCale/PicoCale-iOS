@@ -10,8 +10,15 @@ NSString *kGetUserInfoStep = @"kGetUserInfoStep";
 NSString *kSetImagePropertiesStep = @"kSetImagePropertiesStep";
 NSString *kUploadImageStep = @"kUploadImageStep";
 
-@interface SnapAndRunViewController (PrivateMethods)
-- (void)updateUserInterface:(NSNotification *)notification;
+@interface SnapAndRunViewController ()
+
+{
+    CLLocationManager *locationManager;
+    
+    CLLocation *currentLocation;
+    
+}
+
 @end
 
 
@@ -20,21 +27,100 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Snap and Run";
+    //self.title = @"Flickr Cloud Album";
     
-	if ([[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
+	if (![[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
 		authorizeButton.enabled = NO;
+        authorizeButton.enabled = NO;
+        authorizeDescriptionLabel.text = @"Authenticating...";
+        
+        self.flickrRequest.sessionInfo = kFetchRequestTokenStep;
+        [self.flickrRequest fetchOAuthRequestTokenWithCallbackURL:[NSURL URLWithString:SRCallbackURLBaseString]];
 	}
-	
+    
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserInterface:) name:SnapAndRunShouldUpdateAuthInfoNotification object:nil];
+    
+    
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myGridImage"];
+    
+    self->locationManager = [[CLLocationManager alloc] init];
+           self->locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
+    //self->locationManager.distanceFilter = radius * 1690;
+    self->locationManager.delegate = self;
+    [self-> locationManager requestAlwaysAuthorization];
+    [self->locationManager startUpdatingLocation];
+    
+    //Get Curent Location coordinates from current MapView
+    self->currentLocation = [self deviceLocation] ;
+    
+    NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self updateUserInterface:nil];
+    
+    [self->locationManager startUpdatingLocation];
+	//[self updateUserInterface:nil];
+     [self loadImages];
+    [self.collectionView reloadData];
     
 }
+
+/*
+ Get the number of rows generated in Table View
+ */
+
+
+- (NSInteger) collectionView:(UICollectionView *)collectionView
+      numberOfItemsInSection:(NSInteger)section
+{
+    return self.flickrPics.count;
+}
+
+
+/*
+ Generate the Table View  and insert each row with the Image thumbnail
+ and associated filename.
+ */
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"myGridImage";
+    
+    
+    UICollectionViewCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    //NSLog(@"the cell is %@", imageCell);
+    
+    // Configure each cell in the
+   // ALAsset *asset = [self.flickrPics objectAtIndex:indexPath.row];
+    
+    //NSLog(@"Image URL: %@", [url absoluteString]);
+    
+    imageCell.backgroundColor = [UIColor colorWithPatternImage:[[self.flickrPics objectAtIndex:indexPath.row] thumbnail]];
+    //collectionImageView.image = [UIImage imageWithCGImage:[asset thumbnail]];
+    
+    return imageCell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+
+    
+    
+    self.image = [[self.flickrPics objectAtIndex:indexPath.row] thumbnail];
+    
+    
+    //Check if the media is a photo or a video
+    
+    
+        [self performSegueWithIdentifier:@"viewFlickrScreenImage" sender:self.image];
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -44,9 +130,9 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 - (void)updateUserInterface:(NSNotification *)notification
 {
 	if ([[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
-		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateNormal];
-		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateHighlighted];
-		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateDisabled];		
+		[authorizeButton setTitle:@"Reauthorize"];
+		[authorizeButton setTitle:@"Reauthorize"];
+		[authorizeButton setTitle:@"Reauthorize"];
 		
 		if ([[AppDelegate sharedDelegate].flickrUserName length]) {
 			authorizeDescriptionLabel.text = [NSString stringWithFormat:@"You are %@", [AppDelegate sharedDelegate].flickrUserName];
@@ -58,9 +144,9 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 		snapPictureButton.enabled = YES;
 	}
 	else {
-		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateNormal];
-		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateHighlighted];
-		[authorizeButton setTitle:@"Reauthorize" forState:UIControlStateDisabled];
+		[authorizeButton setTitle:@"Reauthorize"];
+		[authorizeButton setTitle:@"Reauthorize"];
+		[authorizeButton setTitle:@"Reauthorize"];
 		
 		authorizeDescriptionLabel.text = @"Login to Flickr";		
 		snapPictureButton.enabled = NO;
@@ -92,15 +178,76 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 
 #pragma mark Actions
 
+
+- (IBAction)onFetchPhotosPressed:(id)sender {
+    
+    self->currentLocation = [self deviceLocation];
+    NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
+    
+    NSString *latitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *geoRadius = [defaults objectForKey:@"geoRadius"];
+    
+    
+    NSString *longitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
+    
+    if (![flickrRequest isRunning]) {
+        [flickrRequest callAPIMethodWithGET:@"flickr.photos.search" arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"me",@"user_id",[NSString stringWithFormat:@"%@",latitude],@"lat",[NSString stringWithFormat:@"%@",longitude],@"lon",[NSString stringWithFormat:@"%@",geoRadius],@"radius",@"mi",@"radius_units", nil]];
+    }
+    
+}
+
+
 - (IBAction)snapPictureAction
 {
+     self->currentLocation = [self deviceLocation];
+    NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
+    
+    NSString *latitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *geoRadius = [defaults objectForKey:@"geoRadius"];
+    
+    
+    NSString *longitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
+    
     if (![flickrRequest isRunning]) {
-        [flickrRequest callAPIMethodWithGET:@"flickr.photos.getRecent" arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"20", @"per_page", nil]];
+        [flickrRequest callAPIMethodWithGET:@"flickr.photos.search" arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"me",@"user_id",[NSString stringWithFormat:@"%@",latitude],@"lat",[NSString stringWithFormat:@"%@",longitude],@"lon",[NSString stringWithFormat:@"%@",geoRadius],@"radius",@"mi",@"radius_units", nil]];
     }
+}
+
+- (void)loadImages {
+    self->currentLocation = [self deviceLocation];
+    NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
+    
+    NSString *latitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *geoRadius = [defaults objectForKey:@"geoRadius"];
+    
+    
+    NSString *longitude = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
+    
+    if (![flickrRequest isRunning]) {
+        [flickrRequest callAPIMethodWithGET:@"flickr.photos.search" arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"me",@"user_id",[NSString stringWithFormat:@"%@",latitude],@"lat",[NSString stringWithFormat:@"%@",longitude],@"lon",[NSString stringWithFormat:@"%@",geoRadius],@"radius",@"mi",@"radius_units", nil]];
+    }
+}
+
+
+- (CLLocation *)deviceLocation {
+    return self->locationManager.location;
 }
 
 - (IBAction)authorizeAction
 {
+    
     // if there's already OAuthToken, we want to reauthorize
     if ([[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
         [[AppDelegate sharedDelegate] setAndStoreFlickrAuthToken:nil secret:nil];
@@ -131,7 +278,10 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     {
         size = @"m";
     }
-    return [NSString stringWithFormat:@"http://farm%ld.staticflickr.com/%ld/%lld_%@_%@.jpg",(long)flickrPhoto.farm,(long)flickrPhoto.server,flickrPhoto.photoID,flickrPhoto.secret,size];
+    
+    NSString *response = [NSString stringWithFormat:@"http://farm%ld.staticflickr.com/%ld/%lld_%@_%@.jpg",(long)flickrPhoto.farm,(long)flickrPhoto.server,flickrPhoto.photoID,flickrPhoto.secret,size];
+    
+    return response;
 }
 
 
@@ -142,7 +292,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     //NSString *title = [photoDict objectForKey:@"title"];
    // NSLog(@"PhotoTitle : %@",title);
     
-    NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, inRequest.sessionInfo, inResponseDictionary);
+   NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, inRequest.sessionInfo, inResponseDictionary);
     
     NSArray *objPhotos = inResponseDictionary[@"photos"][@"photo"];
     
@@ -157,16 +307,22 @@ NSString *kUploadImageStep = @"kUploadImageStep";
         photo.photoID = [objPhoto[@"id"] longLongValue];
         
         NSString *searchURL = [Flickr flickrPhotoURLForFlickrPhoto:photo size:@"m"];
+        
+        NSLog(@"The URL of the Image obtained: %@",searchURL);
+        
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:searchURL] options:0 error:nil];
         UIImage *image = [UIImage imageWithData:imageData];
         photo.thumbnail = image;
+        
+        
         
         [flickrPhotos addObject:photo];
         [self.flickrPics addObject:photo];
     }
     
+    [self.collectionView reloadData];
     //self.flickrPics = flickrPhotos;
-   [self performSegueWithIdentifier:@"viewFlickrPics" sender:self.flickrPics];
+   //[self performSegueWithIdentifier:@"viewFlickrPics" sender:self.flickrPics];
     /*
 	if (inRequest.sessionInfo == kUploadImageStep) {
 		snapPictureDescriptionLabel.text = @"Setting properties...";
@@ -185,16 +341,6 @@ NSString *kUploadImageStep = @"kUploadImageStep";
   //  [UIApplication sharedApplication].idleTimerDisabled = NO;
         
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    FlickrViewController *fVC = [segue destinationViewController];
-    
-    fVC.flickrPhotos = self.flickrPics;
-    
-}
-
-
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
 {
@@ -285,6 +431,14 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 		}
     }
     return imagePicker;
+}
+    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+        
+        FlickrViewController *fVC = [segue destinationViewController];
+        
+        fVC.displayImage = self.image;
+        
 }
 
 #ifndef __IPHONE_3_0

@@ -30,7 +30,9 @@
 #import "AppDelegate.h"
 #import "FlickrPhoto.h"
 
-@interface SnapAndRunViewController : UIViewController <OFFlickrAPIRequestDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@import CoreLocation;
+
+@interface SnapAndRunViewController : UICollectionViewController <OFFlickrAPIRequestDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
     OFFlickrAPIRequest *flickrRequest;
     
@@ -38,17 +40,18 @@
     
     UILabel *authorizeDescriptionLabel;
     UILabel *snapPictureDescriptionLabel;
-    UIButton *authorizeButton;
     UIButton *snapPictureButton;
 }
 - (IBAction)authorizeAction;
 - (IBAction)snapPictureAction;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *authorizeButton;
 
 @property (nonatomic, retain) IBOutlet UILabel *authorizeDescriptionLabel;
 @property (nonatomic, retain) IBOutlet UILabel *snapPictureDescriptionLabel;
 @property (nonatomic, retain) IBOutlet UIButton *snapPictureButton;
-@property (nonatomic, retain) IBOutlet UIButton *authorizeButton;
+
+@property (nonatomic, strong) UIImage *image;
 
 @property (nonatomic, strong) NSMutableArray *flickrPics;
 
