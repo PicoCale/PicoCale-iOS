@@ -21,7 +21,7 @@
 
 @interface LocationListController : UITableViewController<UIImagePickerControllerDelegate,CLLocationManagerDelegate>
 
-@property (nonatomic, strong) NSMutableArray *locationList;
+@property (nonatomic, strong) NSArray *locationList;
 
 @property (nonatomic, strong) NSArray *photos;
 

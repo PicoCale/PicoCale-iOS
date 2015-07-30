@@ -199,8 +199,10 @@ static NSMutableOrderedSet *placeMarksSet;
          for (ALAsset * asset in collector) {
              [self reverseGeocode:[asset valueForProperty:ALAssetPropertyLocation]];
          }//[self.tableView reloadData];
-         self.locationList = placeMarks;
+         
+         self.locationList = [[NSArray alloc]initWithArray:placeMarks];
         // arrayWithNoDuplicates = [[[NSSet alloc]initWithArray:placeMarks] allObjects];
+        
          dispatch_async(dispatch_get_main_queue(), ^{
              [self.tableView reloadData];
          });
@@ -222,8 +224,8 @@ static NSMutableOrderedSet *placeMarksSet;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    placeMarksSet = [[NSMutableOrderedSet alloc] initWithArray:placeMarks];
-    return [placeMarksSet count];
+    //placeMarksSet = [[NSMutableOrderedSet alloc] initWithArray:placeMarks];
+    return [placeMarks count];
     
 }
 
@@ -243,20 +245,16 @@ static NSMutableOrderedSet *placeMarksSet;
     }
     
     // Configure each cell in the
+   
     
-    
-    if (placeMarks.count > 0) {
-    
-    [imageCell.textLabel setText:[[placeMarksSet objectAtIndex:indexPath.row] thoroughfare ]];
-    } else {
+    [imageCell.textLabel setText:[placeMarks objectAtIndex:indexPath.row]];
+ 
         
         //ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
         
         //CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
         
-        [imageCell.textLabel setText:@""];
-        
-    }
+       // [imageCell.textLabel setText:@""];
     
     return imageCell;
 }
@@ -268,9 +266,13 @@ static NSMutableOrderedSet *placeMarksSet;
         if (error) {
             NSLog(@"Error %@", error.description);
         } else {
-            //CLPlacemark *placemark = [placemarks lastObject];
-            [placeMarks addObjectsFromArray:placemarks];
-            NSLog(@"Location info %@",[[placeMarks lastObject] thoroughfare]);
+            CLPlacemark *placemark = [placemarks lastObject];
+            if (placemark.thoroughfare != nil){
+            [placeMarks addObject:[placemark thoroughfare]];
+            }
+            placeMarks = [[[NSSet setWithArray: placeMarks] allObjects] mutableCopy];
+            
+            NSLog(@"Location info %@",[placeMarks lastObject]);
         }
            }];
 }

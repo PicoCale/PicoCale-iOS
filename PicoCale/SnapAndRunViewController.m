@@ -31,7 +31,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     
 	if (![[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
 		authorizeButton.enabled = NO;
-        authorizeButton.enabled = NO;
+        //authorizeButton.enabled = NO;
         authorizeDescriptionLabel.text = @"Authenticating...";
         
         self.flickrRequest.sessionInfo = kFetchRequestTokenStep;
