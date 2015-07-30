@@ -1,0 +1,13 @@
+PODS:
+  - objectiveflickr (2.0.4)
+  - SBJson (4.0.2)
+
+DEPENDENCIES:
+  - objectiveflickr
+  - SBJson (~> 4.0.1)
+
+SPEC CHECKSUMS:
+  objectiveflickr: aed169dae1eb5a5550ca78f7efd7ccde2e4c26e5
+  SBJson: c18691cc18375b14664ff0fec841f8c4faef1934
+
+COCOAPODS: 0.38.1

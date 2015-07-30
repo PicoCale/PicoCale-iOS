@@ -222,7 +222,8 @@ static NSMutableOrderedSet *placeMarksSet;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [placeMarks count];
+    placeMarksSet = [[NSMutableOrderedSet alloc] initWithArray:placeMarks];
+    return [placeMarksSet count];
     
 }
 
@@ -246,7 +247,7 @@ static NSMutableOrderedSet *placeMarksSet;
     
     if (placeMarks.count > 0) {
     
-    [imageCell.textLabel setText:[[placeMarks objectAtIndex:indexPath.row] thoroughfare ]];
+    [imageCell.textLabel setText:[[placeMarksSet objectAtIndex:indexPath.row] thoroughfare ]];
     } else {
         
         //ALAsset *asset = [self.photos objectAtIndex:indexPath.row];

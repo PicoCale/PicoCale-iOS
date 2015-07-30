@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F2F79812D5DAFFE8D83B15F32E07449 /* SBJson4Writer.h in Headers */ = {isa = PBXBuildFile; fileRef = F0B1CEC77EF292FE95A909EEB28453AE /* SBJson4Writer.h */; };
+		0F8FA866BBF6A55177C494AE8C9C3C0C /* LFSiteReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2369A1ABCF3AF64C20488FA42F131729 /* LFSiteReachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		16C91B3465DE0E0B19A59C82A0543995 /* NSData+LFHTTPFormExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F75B2920CECDB4D23C57889A8CFB77A /* NSData+LFHTTPFormExtensions.h */; };
+		1CDC31637135F6086C210F05CF36D767 /* NSData+LFHTTPFormExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E5C0BE38B5E14E04C2181D7BC9986 /* NSData+LFHTTPFormExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1D74AF8B882C87E0D3B769C9C5E19536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B332D8018A368C4F39B76A81DE3919 /* Foundation.framework */; };
+		1E482536C8317136BDF9F097E5450C20 /* OFXMLMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F64EAC26EE9F1B7A2EF8F7BEBDB6404F /* OFXMLMapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		230809309E9FA186202B5E76B124734E /* SBJson4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = F33DD61247007BC36E40C1111B7A3867 /* SBJson4Parser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2538EAB8651C346BBC1DEAC3C23E578F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825BC6C448C32E4257E312D2DC9E6775 /* CFNetwork.framework */; };
+		29EB7E681FEA12FAF97368E955AF8770 /* SBJson4StreamParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = E7CED1314DF3171FC747E5CC86A24D05 /* SBJson4StreamParserState.h */; };
+		3AC7D9B6EDE0FF2C0A8F6FAB5294728A /* SBJson4StreamWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = 16897266009835A258F10E8103B6F260 /* SBJson4StreamWriterState.h */; };
+		3C82A2D7F5075EF47BEDD136A4AA70E1 /* SBJson4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C4A10574CA7ECAFEF41C1434592812 /* SBJson4Writer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4DD395539057D2100C27679282AB2E41 /* SBJson4StreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CACAE39F76C2AB906FABE0C63E64CE /* SBJson4StreamWriter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		55735569441047F6150A70C44072203D /* SBJson4StreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6FCCDFC99FA49F364DA77A8756A397 /* SBJson4StreamParserState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5C60A77DA893E34F129F482935B35EDF /* OFUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F19DF59AC77CCD87DF9E4A8D6960AB /* OFUtilities.h */; };
+		6726E9525404E0B410112BBE31BC29B2 /* SBJson4Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = E39B34ABFD415307155CA58A34DBA168 /* SBJson4Parser.h */; };
+		821C688257742D8688EEF6FD09DAEF43 /* OFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 629946746156F9C3430A19945FF53F95 /* OFUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		87B381C62F03BBCC92D8626BCB99DAB0 /* SBJson4StreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6E154088BC4FA935E262657F687CA /* SBJson4StreamTokeniser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		87E7062F273A62335463C35DDF92765E /* objectiveflickr-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B176422FCF9998526BDF778EC4E048DB /* objectiveflickr-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		941C0646A3CA52A49F61E0A0A8E84FF5 /* LFWebAPIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CBBB857865A3533DE52AB5059AF5018D /* LFWebAPIKit.h */; };
+		9587CD473F384A0D89F24E5E75761EC1 /* SBJson-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3337431FF6A3F621229258953CB063E /* SBJson-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98CEE70B4A238D9E65D7410245E938FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B332D8018A368C4F39B76A81DE3919 /* Foundation.framework */; };
+		A40CB209C2C4DC86D199CF34E154B422 /* SBJson4.h in Headers */ = {isa = PBXBuildFile; fileRef = A44994B6F48A2151413ECE915F8781A9 /* SBJson4.h */; };
+		AB2A39D1667C8C633557C9CA75E3A39F /* SBJson4StreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F67CEDEA58FD66A0905F1F58A12E1CBA /* SBJson4StreamParser.h */; };
+		AC1E2B7A91EBF3D239ABBF3A1AE63CAD /* LFSiteReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = F1127B02A3631615737D64C94F30ADA7 /* LFSiteReachability.h */; };
+		AC98CA1264BB048B688D045664499AF7 /* OFXMLMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0778F035AE912968B945A0E545E9EA29 /* OFXMLMapper.h */; };
+		AE85105ED5BAF84F54974FCBF74B35B5 /* SBJson4StreamTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E3277B4F0C6992A166CC3809821D926 /* SBJson4StreamTokeniser.h */; };
+		B22408126199A1DDC1E05592307C75B9 /* ObjectiveFlickr.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA3C9ABD99A64465F487AA090AC3862 /* ObjectiveFlickr.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C9CE191DCC567D2F9535AAA00E8F340D /* SBJson-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 482791DEF48DADD084323A8D9FC7DA6D /* SBJson-dummy.m */; };
+		CACF3AAC5C7E45A430EF8321B5EBC4D1 /* LFHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A01CEC9166C530D74D354F0BBD68AC6 /* LFHTTPRequest.h */; };
+		CBCF563DA9EEFEBDB7A111054CC608DD /* SBJson4StreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = A79BC3742E336B05331DCB6C96CAAC28 /* SBJson4StreamWriterState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D0A55C71059F4D6EA326109258854161 /* SBJson4StreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 680FDCF4823FA75EE9CFF08B33ECEF9A /* SBJson4StreamParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D285A207868A86F84301C2101CF4C2C0 /* ObjectiveFlickr.h in Headers */ = {isa = PBXBuildFile; fileRef = F76705D7D865380FDB8040FAA00F9924 /* ObjectiveFlickr.h */; };
+		DE7F7C2057B3173C60B1F17E6AF184F0 /* LFHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A48BE47AE07E46D032C6BD673E56816 /* LFHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E01F4FF930C68F6A72A50463F8D0F06A /* SBJson4StreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6EE6D4E40DBB3F455A46B07068BCA4 /* SBJson4StreamWriter.h */; };
+		E7F05B71054EA01CCD7F7F89C1C624CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87578AC667AF4AC42A22F66F6FD652E5 /* SystemConfiguration.framework */; };
+		E82352C9361ED709AED738C54CBADAB3 /* objectiveflickr-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8623EABBC5AF1349A484C264DC28558 /* objectiveflickr-dummy.m */; };
+		F242DA4E60FD57FC807320EB0F1423F4 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B9DDD6F254278B62813604D2D2F74 /* Pods-dummy.m */; };
+		FEF572AD29330B3430BC74A873A9D56F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B332D8018A368C4F39B76A81DE3919 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38833D83BE6A7A1ECD6699271234CAB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DFE5585909420A93CEDD70814152086;
+			remoteInfo = SBJson;
+		};
+		49BCCF92EBF6FDAA1CB447315D69CE8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D920AE71274D335587B3D47098FB35;
+			remoteInfo = objectiveflickr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0778F035AE912968B945A0E545E9EA29 /* OFXMLMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OFXMLMapper.h; path = Source/OFXMLMapper.h; sourceTree = "<group>"; };
+		0A01CEC9166C530D74D354F0BBD68AC6 /* LFHTTPRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFHTTPRequest.h; path = LFWebAPIKit/LFHTTPRequest.h; sourceTree = "<group>"; };
+		0C7F5942EEE229581F0BBEBE65E48981 /* objectiveflickr-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "objectiveflickr-Private.xcconfig"; sourceTree = "<group>"; };
+		16897266009835A258F10E8103B6F260 /* SBJson4StreamWriterState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4StreamWriterState.h; path = src/main/objc/SBJson4StreamWriterState.h; sourceTree = "<group>"; };
+		18F19DF59AC77CCD87DF9E4A8D6960AB /* OFUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OFUtilities.h; path = Source/OFUtilities.h; sourceTree = "<group>"; };
+		19F830CABFD7C5AB3A939E4B18915F47 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2369A1ABCF3AF64C20488FA42F131729 /* LFSiteReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LFSiteReachability.m; path = LFWebAPIKit/LFSiteReachability.m; sourceTree = "<group>"; };
+		2DB6E154088BC4FA935E262657F687CA /* SBJson4StreamTokeniser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamTokeniser.m; path = src/main/objc/SBJson4StreamTokeniser.m; sourceTree = "<group>"; };
+		32CACAE39F76C2AB906FABE0C63E64CE /* SBJson4StreamWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamWriter.m; path = src/main/objc/SBJson4StreamWriter.m; sourceTree = "<group>"; };
+		32E9BCBFA0050C4EB4D584547719D1AC /* SBJson.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SBJson.modulemap; sourceTree = "<group>"; };
+		482791DEF48DADD084323A8D9FC7DA6D /* SBJson-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SBJson-dummy.m"; sourceTree = "<group>"; };
+		4D01E055EB6E9EA58B34A6F87E14A77B /* SBJson-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SBJson-Private.xcconfig"; sourceTree = "<group>"; };
+		4DD39BF666867171E8AA92AD48B8B52F /* objectiveflickr.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = objectiveflickr.modulemap; sourceTree = "<group>"; };
+		50B332D8018A368C4F39B76A81DE3919 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5B5E5C0BE38B5E14E04C2181D7BC9986 /* NSData+LFHTTPFormExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+LFHTTPFormExtensions.m"; path = "LFWebAPIKit/NSData+LFHTTPFormExtensions.m"; sourceTree = "<group>"; };
+		5E3277B4F0C6992A166CC3809821D926 /* SBJson4StreamTokeniser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4StreamTokeniser.h; path = src/main/objc/SBJson4StreamTokeniser.h; sourceTree = "<group>"; };
+		629946746156F9C3430A19945FF53F95 /* OFUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OFUtilities.m; path = Source/OFUtilities.m; sourceTree = "<group>"; };
+		680FDCF4823FA75EE9CFF08B33ECEF9A /* SBJson4StreamParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamParser.m; path = src/main/objc/SBJson4StreamParser.m; sourceTree = "<group>"; };
+		696F78B06B468F43B2C751C7A86B3FD2 /* objectiveflickr-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "objectiveflickr-prefix.pch"; sourceTree = "<group>"; };
+		782BFD0164376C3A11A5B86C0796FEEE /* libSBJson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSBJson.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A48BE47AE07E46D032C6BD673E56816 /* LFHTTPRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LFHTTPRequest.m; path = LFWebAPIKit/LFHTTPRequest.m; sourceTree = "<group>"; };
+		7D0BD8CA1A5A386213830B2134F342E0 /* objectiveflickr.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = objectiveflickr.xcconfig; sourceTree = "<group>"; };
+		80ED9DA0324DE1366B2FA2091C69F1A9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		812D004915ED242FBBF43028FBF5ACB5 /* BridgeSupport */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = BridgeSupport; sourceTree = "<group>"; };
+		825BC6C448C32E4257E312D2DC9E6775 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		8595AE14205F7D08D3F0058D55B51ECC /* SBJson.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SBJson.xcconfig; sourceTree = "<group>"; };
+		87578AC667AF4AC42A22F66F6FD652E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		8F75B2920CECDB4D23C57889A8CFB77A /* NSData+LFHTTPFormExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+LFHTTPFormExtensions.h"; path = "LFWebAPIKit/NSData+LFHTTPFormExtensions.h"; sourceTree = "<group>"; };
+		9F5A7233620A2A1B3EF99D814EA46FFD /* SBJson-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBJson-prefix.pch"; sourceTree = "<group>"; };
+		A44994B6F48A2151413ECE915F8781A9 /* SBJson4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4.h; path = src/main/objc/SBJson4.h; sourceTree = "<group>"; };
+		A5F822E59C48343778A7A0893BEB2933 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		A79BC3742E336B05331DCB6C96CAAC28 /* SBJson4StreamWriterState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamWriterState.m; path = src/main/objc/SBJson4StreamWriterState.m; sourceTree = "<group>"; };
+		B176422FCF9998526BDF778EC4E048DB /* objectiveflickr-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "objectiveflickr-umbrella.h"; sourceTree = "<group>"; };
+		B31419BF4FCD760388655E2906686FE5 /* libobjectiveflickr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libobjectiveflickr.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BB5840B4BDD2DDB6F5AB1247265D75 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		BE6EE6D4E40DBB3F455A46B07068BCA4 /* SBJson4StreamWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4StreamWriter.h; path = src/main/objc/SBJson4StreamWriter.h; sourceTree = "<group>"; };
+		C39B9DDD6F254278B62813604D2D2F74 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		C88113A79685B4EFEE7BAD12896829F7 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CBBB857865A3533DE52AB5059AF5018D /* LFWebAPIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFWebAPIKit.h; path = LFWebAPIKit/LFWebAPIKit.h; sourceTree = "<group>"; };
+		DFA3C9ABD99A64465F487AA090AC3862 /* ObjectiveFlickr.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectiveFlickr.m; path = Source/ObjectiveFlickr.m; sourceTree = "<group>"; };
+		E0C4A10574CA7ECAFEF41C1434592812 /* SBJson4Writer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4Writer.m; path = src/main/objc/SBJson4Writer.m; sourceTree = "<group>"; };
+		E3337431FF6A3F621229258953CB063E /* SBJson-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SBJson-umbrella.h"; sourceTree = "<group>"; };
+		E39B34ABFD415307155CA58A34DBA168 /* SBJson4Parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4Parser.h; path = src/main/objc/SBJson4Parser.h; sourceTree = "<group>"; };
+		E7CED1314DF3171FC747E5CC86A24D05 /* SBJson4StreamParserState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4StreamParserState.h; path = src/main/objc/SBJson4StreamParserState.h; sourceTree = "<group>"; };
+		E8623EABBC5AF1349A484C264DC28558 /* objectiveflickr-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "objectiveflickr-dummy.m"; sourceTree = "<group>"; };
+		ED784B8409F1344DD53426A30B69619D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6FCCDFC99FA49F364DA77A8756A397 /* SBJson4StreamParserState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4StreamParserState.m; path = src/main/objc/SBJson4StreamParserState.m; sourceTree = "<group>"; };
+		F0B1CEC77EF292FE95A909EEB28453AE /* SBJson4Writer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4Writer.h; path = src/main/objc/SBJson4Writer.h; sourceTree = "<group>"; };
+		F1127B02A3631615737D64C94F30ADA7 /* LFSiteReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFSiteReachability.h; path = LFWebAPIKit/LFSiteReachability.h; sourceTree = "<group>"; };
+		F33DD61247007BC36E40C1111B7A3867 /* SBJson4Parser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SBJson4Parser.m; path = src/main/objc/SBJson4Parser.m; sourceTree = "<group>"; };
+		F64EAC26EE9F1B7A2EF8F7BEBDB6404F /* OFXMLMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OFXMLMapper.m; path = Source/OFXMLMapper.m; sourceTree = "<group>"; };
+		F67CEDEA58FD66A0905F1F58A12E1CBA /* SBJson4StreamParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SBJson4StreamParser.h; path = src/main/objc/SBJson4StreamParser.h; sourceTree = "<group>"; };
+		F76705D7D865380FDB8040FAA00F9924 /* ObjectiveFlickr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectiveFlickr.h; path = Source/ObjectiveFlickr.h; sourceTree = "<group>"; };
+		FF4E06AF8E420FD3CE29F241C95B8587 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AC838FF61408B2028F20317B3338D53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2538EAB8651C346BBC1DEAC3C23E578F /* CFNetwork.framework in Frameworks */,
+				98CEE70B4A238D9E65D7410245E938FB /* Foundation.framework in Frameworks */,
+				E7F05B71054EA01CCD7F7F89C1C624CE /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA547ABE7DC013FC63A545FBE11557D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D74AF8B882C87E0D3B769C9C5E19536 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E314BEAF3772E1FF449241D866D08CE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF572AD29330B3430BC74A873A9D56F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F414954F87ED957BE121A1660094A49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E3C8F03C9736B52CF37B3E26A12505E /* SBJson */,
+				3643B477258E6EF47EF1EB2223FB714F /* objectiveflickr */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3643B477258E6EF47EF1EB2223FB714F /* objectiveflickr */ = {
+			isa = PBXGroup;
+			children = (
+				0A01CEC9166C530D74D354F0BBD68AC6 /* LFHTTPRequest.h */,
+				7A48BE47AE07E46D032C6BD673E56816 /* LFHTTPRequest.m */,
+				F1127B02A3631615737D64C94F30ADA7 /* LFSiteReachability.h */,
+				2369A1ABCF3AF64C20488FA42F131729 /* LFSiteReachability.m */,
+				CBBB857865A3533DE52AB5059AF5018D /* LFWebAPIKit.h */,
+				8F75B2920CECDB4D23C57889A8CFB77A /* NSData+LFHTTPFormExtensions.h */,
+				5B5E5C0BE38B5E14E04C2181D7BC9986 /* NSData+LFHTTPFormExtensions.m */,
+				18F19DF59AC77CCD87DF9E4A8D6960AB /* OFUtilities.h */,
+				629946746156F9C3430A19945FF53F95 /* OFUtilities.m */,
+				0778F035AE912968B945A0E545E9EA29 /* OFXMLMapper.h */,
+				F64EAC26EE9F1B7A2EF8F7BEBDB6404F /* OFXMLMapper.m */,
+				F76705D7D865380FDB8040FAA00F9924 /* ObjectiveFlickr.h */,
+				DFA3C9ABD99A64465F487AA090AC3862 /* ObjectiveFlickr.m */,
+				D5DF0F164DCB3EB22DA8B7EA2839BC3F /* Resources */,
+				4A52A7B5E9049534050075C9A5BB6D0E /* Support Files */,
+			);
+			path = objectiveflickr;
+			sourceTree = "<group>";
+		};
+		4A52A7B5E9049534050075C9A5BB6D0E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DD39BF666867171E8AA92AD48B8B52F /* objectiveflickr.modulemap */,
+				7D0BD8CA1A5A386213830B2134F342E0 /* objectiveflickr.xcconfig */,
+				0C7F5942EEE229581F0BBEBE65E48981 /* objectiveflickr-Private.xcconfig */,
+				E8623EABBC5AF1349A484C264DC28558 /* objectiveflickr-dummy.m */,
+				696F78B06B468F43B2C751C7A86B3FD2 /* objectiveflickr-prefix.pch */,
+				B176422FCF9998526BDF778EC4E048DB /* objectiveflickr-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/objectiveflickr";
+			sourceTree = "<group>";
+		};
+		5E1F3384B1B39575144FEBFCF3210CCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE3C420F843D28CC19CB40DCE9D7D8D1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6FD3E34139C991EBA686BD4A55CCB45D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19F830CABFD7C5AB3A939E4B18915F47 /* Pods-acknowledgements.markdown */,
+				A5F822E59C48343778A7A0893BEB2933 /* Pods-acknowledgements.plist */,
+				C39B9DDD6F254278B62813604D2D2F74 /* Pods-dummy.m */,
+				B3BB5840B4BDD2DDB6F5AB1247265D75 /* Pods-resources.sh */,
+				80ED9DA0324DE1366B2FA2091C69F1A9 /* Pods.debug.xcconfig */,
+				FF4E06AF8E420FD3CE29F241C95B8587 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				C88113A79685B4EFEE7BAD12896829F7 /* Podfile */,
+				5E1F3384B1B39575144FEBFCF3210CCC /* Frameworks */,
+				2F414954F87ED957BE121A1660094A49 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				848A6CE8DA3504A266A17F635DC3683A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		848A6CE8DA3504A266A17F635DC3683A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6FD3E34139C991EBA686BD4A55CCB45D /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8E3C8F03C9736B52CF37B3E26A12505E /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				A44994B6F48A2151413ECE915F8781A9 /* SBJson4.h */,
+				E39B34ABFD415307155CA58A34DBA168 /* SBJson4Parser.h */,
+				F33DD61247007BC36E40C1111B7A3867 /* SBJson4Parser.m */,
+				F67CEDEA58FD66A0905F1F58A12E1CBA /* SBJson4StreamParser.h */,
+				680FDCF4823FA75EE9CFF08B33ECEF9A /* SBJson4StreamParser.m */,
+				E7CED1314DF3171FC747E5CC86A24D05 /* SBJson4StreamParserState.h */,
+				EF6FCCDFC99FA49F364DA77A8756A397 /* SBJson4StreamParserState.m */,
+				5E3277B4F0C6992A166CC3809821D926 /* SBJson4StreamTokeniser.h */,
+				2DB6E154088BC4FA935E262657F687CA /* SBJson4StreamTokeniser.m */,
+				BE6EE6D4E40DBB3F455A46B07068BCA4 /* SBJson4StreamWriter.h */,
+				32CACAE39F76C2AB906FABE0C63E64CE /* SBJson4StreamWriter.m */,
+				16897266009835A258F10E8103B6F260 /* SBJson4StreamWriterState.h */,
+				A79BC3742E336B05331DCB6C96CAAC28 /* SBJson4StreamWriterState.m */,
+				F0B1CEC77EF292FE95A909EEB28453AE /* SBJson4Writer.h */,
+				E0C4A10574CA7ECAFEF41C1434592812 /* SBJson4Writer.m */,
+				EAB0207E5630F5BD8E5FF8285B4AB7F6 /* Support Files */,
+			);
+			path = SBJson;
+			sourceTree = "<group>";
+		};
+		AE3C420F843D28CC19CB40DCE9D7D8D1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				825BC6C448C32E4257E312D2DC9E6775 /* CFNetwork.framework */,
+				50B332D8018A368C4F39B76A81DE3919 /* Foundation.framework */,
+				87578AC667AF4AC42A22F66F6FD652E5 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED784B8409F1344DD53426A30B69619D /* libPods.a */,
+				782BFD0164376C3A11A5B86C0796FEEE /* libSBJson.a */,
+				B31419BF4FCD760388655E2906686FE5 /* libobjectiveflickr.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5DF0F164DCB3EB22DA8B7EA2839BC3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				812D004915ED242FBBF43028FBF5ACB5 /* BridgeSupport */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EAB0207E5630F5BD8E5FF8285B4AB7F6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				32E9BCBFA0050C4EB4D584547719D1AC /* SBJson.modulemap */,
+				8595AE14205F7D08D3F0058D55B51ECC /* SBJson.xcconfig */,
+				4D01E055EB6E9EA58B34A6F87E14A77B /* SBJson-Private.xcconfig */,
+				482791DEF48DADD084323A8D9FC7DA6D /* SBJson-dummy.m */,
+				9F5A7233620A2A1B3EF99D814EA46FFD /* SBJson-prefix.pch */,
+				E3337431FF6A3F621229258953CB063E /* SBJson-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SBJson";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		15D24D251CB4A5EE6A396D57C29177C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACF3AAC5C7E45A430EF8321B5EBC4D1 /* LFHTTPRequest.h in Headers */,
+				AC1E2B7A91EBF3D239ABBF3A1AE63CAD /* LFSiteReachability.h in Headers */,
+				941C0646A3CA52A49F61E0A0A8E84FF5 /* LFWebAPIKit.h in Headers */,
+				16C91B3465DE0E0B19A59C82A0543995 /* NSData+LFHTTPFormExtensions.h in Headers */,
+				5C60A77DA893E34F129F482935B35EDF /* OFUtilities.h in Headers */,
+				AC98CA1264BB048B688D045664499AF7 /* OFXMLMapper.h in Headers */,
+				D285A207868A86F84301C2101CF4C2C0 /* ObjectiveFlickr.h in Headers */,
+				87E7062F273A62335463C35DDF92765E /* objectiveflickr-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC44FE155FEA8CAF840516DC5578B676 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9587CD473F384A0D89F24E5E75761EC1 /* SBJson-umbrella.h in Headers */,
+				A40CB209C2C4DC86D199CF34E154B422 /* SBJson4.h in Headers */,
+				6726E9525404E0B410112BBE31BC29B2 /* SBJson4Parser.h in Headers */,
+				AB2A39D1667C8C633557C9CA75E3A39F /* SBJson4StreamParser.h in Headers */,
+				29EB7E681FEA12FAF97368E955AF8770 /* SBJson4StreamParserState.h in Headers */,
+				AE85105ED5BAF84F54974FCBF74B35B5 /* SBJson4StreamTokeniser.h in Headers */,
+				E01F4FF930C68F6A72A50463F8D0F06A /* SBJson4StreamWriter.h in Headers */,
+				3AC7D9B6EDE0FF2C0A8F6FAB5294728A /* SBJson4StreamWriterState.h in Headers */,
+				0F2F79812D5DAFFE8D83B15F32E07449 /* SBJson4Writer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		21D920AE71274D335587B3D47098FB35 /* objectiveflickr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 457A21A88CD7CA97BA05FB182DA0AD1B /* Build configuration list for PBXNativeTarget "objectiveflickr" */;
+			buildPhases = (
+				4E4CA5CC0B1259184AB48F10E589AEBE /* Sources */,
+				0AC838FF61408B2028F20317B3338D53 /* Frameworks */,
+				15D24D251CB4A5EE6A396D57C29177C5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = objectiveflickr;
+			productName = objectiveflickr;
+			productReference = B31419BF4FCD760388655E2906686FE5 /* libobjectiveflickr.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		277B0C4BF83B4D8D1DEC8548033D7128 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53B44C7CFF0E028838E5ABA692A63598 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				5830286D6C84B727E502C3D7579F8FA8 /* Sources */,
+				E314BEAF3772E1FF449241D866D08CE9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFC90332306F71A0A7F080BD316FDBBC /* PBXTargetDependency */,
+				91851F99D6A91D4BBDD168B59119AE8A /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = ED784B8409F1344DD53426A30B69619D /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3DFE5585909420A93CEDD70814152086 /* SBJson */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A5128E48CD189183785598B46118014 /* Build configuration list for PBXNativeTarget "SBJson" */;
+			buildPhases = (
+				D97D656258F983D3D9E2E5B513A2167E /* Sources */,
+				6EA547ABE7DC013FC63A545FBE11557D /* Frameworks */,
+				AC44FE155FEA8CAF840516DC5578B676 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SBJson;
+			productName = SBJson;
+			productReference = 782BFD0164376C3A11A5B86C0796FEEE /* libSBJson.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				277B0C4BF83B4D8D1DEC8548033D7128 /* Pods */,
+				3DFE5585909420A93CEDD70814152086 /* SBJson */,
+				21D920AE71274D335587B3D47098FB35 /* objectiveflickr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E4CA5CC0B1259184AB48F10E589AEBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE7F7C2057B3173C60B1F17E6AF184F0 /* LFHTTPRequest.m in Sources */,
+				0F8FA866BBF6A55177C494AE8C9C3C0C /* LFSiteReachability.m in Sources */,
+				1CDC31637135F6086C210F05CF36D767 /* NSData+LFHTTPFormExtensions.m in Sources */,
+				821C688257742D8688EEF6FD09DAEF43 /* OFUtilities.m in Sources */,
+				1E482536C8317136BDF9F097E5450C20 /* OFXMLMapper.m in Sources */,
+				B22408126199A1DDC1E05592307C75B9 /* ObjectiveFlickr.m in Sources */,
+				E82352C9361ED709AED738C54CBADAB3 /* objectiveflickr-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5830286D6C84B727E502C3D7579F8FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F242DA4E60FD57FC807320EB0F1423F4 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D97D656258F983D3D9E2E5B513A2167E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CE191DCC567D2F9535AAA00E8F340D /* SBJson-dummy.m in Sources */,
+				230809309E9FA186202B5E76B124734E /* SBJson4Parser.m in Sources */,
+				D0A55C71059F4D6EA326109258854161 /* SBJson4StreamParser.m in Sources */,
+				55735569441047F6150A70C44072203D /* SBJson4StreamParserState.m in Sources */,
+				87B381C62F03BBCC92D8626BCB99DAB0 /* SBJson4StreamTokeniser.m in Sources */,
+				4DD395539057D2100C27679282AB2E41 /* SBJson4StreamWriter.m in Sources */,
+				CBCF563DA9EEFEBDB7A111054CC608DD /* SBJson4StreamWriterState.m in Sources */,
+				3C82A2D7F5075EF47BEDD136A4AA70E1 /* SBJson4Writer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91851F99D6A91D4BBDD168B59119AE8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = objectiveflickr;
+			target = 21D920AE71274D335587B3D47098FB35 /* objectiveflickr */;
+			targetProxy = 49BCCF92EBF6FDAA1CB447315D69CE8A /* PBXContainerItemProxy */;
+		};
+		CFC90332306F71A0A7F080BD316FDBBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SBJson;
+			target = 3DFE5585909420A93CEDD70814152086 /* SBJson */;
+			targetProxy = 38833D83BE6A7A1ECD6699271234CAB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2296A878B6477653A3DF46290B31DE7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D01E055EB6E9EA58B34A6F87E14A77B /* SBJson-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SBJson/SBJson-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				MODULEMAP_FILE = "Target Support Files/SBJson/SBJson.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		26F11E6B114A85048642BD9B2FB02C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6ACF095005F43F01B874F86BFFC17BE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7F5942EEE229581F0BBEBE65E48981 /* objectiveflickr-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/objectiveflickr/objectiveflickr-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				MODULEMAP_FILE = "Target Support Files/objectiveflickr/objectiveflickr.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA78782792A3E6851A8C3D009B42371D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CF023E248A539657FFDA82D6B5A0CD59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80ED9DA0324DE1366B2FA2091C69F1A9 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DC2A450A7D7EE8B67BF84F4CEA2B003D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF4E06AF8E420FD3CE29F241C95B8587 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E00E412F9FA7CA920A1154CDBA9F6234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7F5942EEE229581F0BBEBE65E48981 /* objectiveflickr-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/objectiveflickr/objectiveflickr-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				MODULEMAP_FILE = "Target Support Files/objectiveflickr/objectiveflickr.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F1BE1A6ECD31CD26936DB5D81BDC10B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D01E055EB6E9EA58B34A6F87E14A77B /* SBJson-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SBJson/SBJson-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				MODULEMAP_FILE = "Target Support Files/SBJson/SBJson.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A5128E48CD189183785598B46118014 /* Build configuration list for PBXNativeTarget "SBJson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BE1A6ECD31CD26936DB5D81BDC10B1 /* Debug */,
+				2296A878B6477653A3DF46290B31DE7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA78782792A3E6851A8C3D009B42371D /* Debug */,
+				26F11E6B114A85048642BD9B2FB02C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		457A21A88CD7CA97BA05FB182DA0AD1B /* Build configuration list for PBXNativeTarget "objectiveflickr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACF095005F43F01B874F86BFFC17BE7 /* Debug */,
+				E00E412F9FA7CA920A1154CDBA9F6234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53B44C7CFF0E028838E5ABA692A63598 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF023E248A539657FFDA82D6B5A0CD59 /* Debug */,
+				DC2A450A7D7EE8B67BF84F4CEA2B003D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
