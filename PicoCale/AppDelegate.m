@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SnapAndRunViewController.h"
+#import "FlickrCollectionViewController.h"
 #import "SampleAPIKey.h"
 
 @interface AppDelegate ()

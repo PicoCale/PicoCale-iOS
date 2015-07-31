@@ -42,7 +42,7 @@
 		FD88F2881B6700C700DC262D /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2831B6700C700DC262D /* NSData+Base64.m */; };
 		FD88F2891B6700C700DC262D /* NSString+URLEncodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */; };
 		FD88F2AA1B67E68F00DC262D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD88F2A81B67E68F00DC262D /* Main.storyboard */; };
-		FD88F2BC1B68169800DC262D /* SnapAndRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */; };
+		FD88F2BC1B68169800DC262D /* FlickrCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2BA1B68169800DC262D /* FlickrCollectionViewController.m */; };
 		FD88F2BF1B681F0E00DC262D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2BE1B681F0E00DC262D /* AppDelegate.m */; };
 		FD88F2C51B683C3F00DC262D /* FlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2C41B683C3F00DC262D /* FlickrViewController.m */; };
 		FD88F2C81B683DF100DC262D /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2C71B683DF100DC262D /* FlickrPhoto.m */; };
@@ -120,8 +120,8 @@
 		FD88F2851B6700C700DC262D /* NSString+URLEncodeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncodeString.m"; sourceTree = "<group>"; };
 		FD88F2A01B67E4E800DC262D /* SampleAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleAPIKey.h; sourceTree = "<group>"; };
 		FD88F2A91B67E68F00DC262D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FD88F2B91B68169800DC262D /* SnapAndRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapAndRunViewController.h; sourceTree = "<group>"; };
-		FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapAndRunViewController.m; sourceTree = "<group>"; };
+		FD88F2B91B68169800DC262D /* FlickrCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrCollectionViewController.h; sourceTree = "<group>"; };
+		FD88F2BA1B68169800DC262D /* FlickrCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrCollectionViewController.m; sourceTree = "<group>"; };
 		FD88F2BD1B681F0E00DC262D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD88F2BE1B681F0E00DC262D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FD88F2C31B683C3F00DC262D /* FlickrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewController.h; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 				FD88F2C41B683C3F00DC262D /* FlickrViewController.m */,
 				FD1944621B698F3D0078B881 /* LocationListController.h */,
 				FD1944631B698F4F0078B881 /* LocationListController.m */,
-				FD88F2B91B68169800DC262D /* SnapAndRunViewController.h */,
-				FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */,
+				FD88F2B91B68169800DC262D /* FlickrCollectionViewController.h */,
+				FD88F2BA1B68169800DC262D /* FlickrCollectionViewController.m */,
 				FD88F2C91B684B3D00DC262D /* Flickr.h */,
 				FD88F2CA1B684B4F00DC262D /* Flickr.m */,
 				FD88F2A81B67E68F00DC262D /* Main.storyboard */,
@@ -446,7 +446,7 @@
 				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
 				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,
 				FD3259E51B6B14E00088495B /* Location.m in Sources */,
-				FD88F2BC1B68169800DC262D /* SnapAndRunViewController.m in Sources */,
+				FD88F2BC1B68169800DC262D /* FlickrCollectionViewController.m in Sources */,
 				FD88F2501B653CDC00DC262D /* Constants.m in Sources */,
 				FD88F2C51B683C3F00DC262D /* FlickrViewController.m in Sources */,
 				FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */,

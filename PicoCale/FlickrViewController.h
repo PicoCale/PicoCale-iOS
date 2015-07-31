@@ -14,13 +14,13 @@
 #import <Accounts/Accounts.h>
 
 
-
+@import CoreLocation;
 /*
  Initialize the elements required to display the selected image
  from the TableView in a separate View.
  */
 
-@interface FlickrViewController : UIViewController
+@interface FlickrViewController : UIViewController<CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *fullImageView;
 
@@ -31,6 +31,10 @@
 @property (nonatomic, strong) UIImage *displayImage;
 
 @property (nonatomic, strong) ALAsset *assetInfo;
+
+@property (nonatomic, strong) NSString *locationString;
+
+@property (nonatomic,strong) CLLocation *location;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareTwitter;
 

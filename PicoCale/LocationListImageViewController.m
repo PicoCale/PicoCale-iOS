@@ -47,7 +47,7 @@
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         
-        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using #PicoCale"]];
+        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using @PicoCaleApp from #%@",[self.locationString stringByReplacingOccurrencesOfString:@" " withString:@"_"]]];
         
         [tweetSheet addImage:self->_displayImage];
         

@@ -114,6 +114,18 @@ static NSMutableOrderedSet *placeMarksSet;
  assets
  */
 
+-(void)stopAnimation:(id)sender {
+    if( _indicator.isAnimating ) {
+        [_indicator stopAnimating];
+    }
+}
+
+-(void)startAnimation:(id)sender {
+    if( !_indicator.isAnimating ) {
+        [_indicator startAnimating];
+    }
+}
+
 
 - (IBAction)onRefreshPressed:(id)sender {
     [self.tableView reloadData];
@@ -124,18 +136,14 @@ static NSMutableOrderedSet *placeMarksSet;
 {
     
     [super viewWillAppear:animated];
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-    // add it
-    [self.view addSubview:indicator];
-    
-    // animate it
-    [indicator startAnimating];
+    [self performSelectorOnMainThread:@selector(startAnimation:) withObject:self waitUntilDone:YES];
     
     [self->locationManager startUpdatingLocation];
     // collect the photos
     [self disPlayLocationBasedPictures:self->locationManager.location];
-    [indicator stopAnimating];
+    [self performSelectorOnMainThread:@selector(stopAnimation:) withObject:self waitUntilDone:YES];
+
    
 }
 

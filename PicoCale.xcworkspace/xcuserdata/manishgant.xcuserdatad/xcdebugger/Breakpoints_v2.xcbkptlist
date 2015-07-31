@@ -47,8 +47,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "+getRadius_C"
-            landmarkType = "4">
+            landmarkName = "radius_C"
+            landmarkType = "19">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -119,7 +119,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.h"
+            filePath = "PicoCale/FlickrCollectionViewController.h"
             timestampString = "459839171.9067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -135,7 +135,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -151,7 +151,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -167,7 +167,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -183,7 +183,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -199,7 +199,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -215,39 +215,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
-            timestampString = "459914295.523675"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "-flickrAPIRequest:didCompleteWithResponse:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
-            timestampString = "459914295.523675"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
-            landmarkName = "-flickrAPIRequest:didCompleteWithResponse:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -263,7 +231,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -279,7 +247,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicoCale/SnapAndRunViewController.m"
+            filePath = "PicoCale/FlickrCollectionViewController.m"
             timestampString = "459914295.523675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -296,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicoCale/LocationListController.m"
-            timestampString = "460011850.478801"
+            timestampString = "460013460.620973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "-reverseGeocode:"
             landmarkType = "5">
             <Locations>
@@ -342,11 +310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicoCale/LocationListController.m"
-            timestampString = "460011850.478801"
+            timestampString = "460013460.620973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

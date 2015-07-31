@@ -1,5 +1,5 @@
 
-#import "SnapAndRunViewController.h"
+#import "FlickrCollectionViewController.h"
 #import "AppDelegate.h"
 #import "FlickrPhoto.h"
 #import "Flickr.h"
@@ -321,24 +321,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     }
     
     [self.collectionView reloadData];
-    //self.flickrPics = flickrPhotos;
-   //[self performSegueWithIdentifier:@"viewFlickrPics" sender:self.flickrPics];
-    /*
-	if (inRequest.sessionInfo == kUploadImageStep) {
-		snapPictureDescriptionLabel.text = @"Setting properties...";
 
-     
-        NSLog(@"%@", inResponseDictionary);
-        NSString *photoID = [[inResponseDictionary valueForKeyPath:@"photoid"] textContent];
-
-        flickrRequest.sessionInfo = kSetImagePropertiesStep;
-        [flickrRequest callAPIMethodWithPOST:@"flickr.photos.setMeta" arguments:[NSDictionary dictionaryWithObjectsAndKeys:photoID, @"photo_id", @"Snap and Run", @"title", @"Uploaded from my iPhone/iPod Touch", @"description", nil]];        		        
-	}
-    else if (inRequest.sessionInfo == kSetImagePropertiesStep) {
-		[self updateUserInterface:nil];		
-		snapPictureDescriptionLabel.text = @"Done";
-     */
-  //  [UIApplication sharedApplication].idleTimerDisabled = NO;
         
 }
 

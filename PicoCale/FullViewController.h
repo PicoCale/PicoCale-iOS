@@ -13,6 +13,7 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
+@import CoreLocation;
 
 
 /*
@@ -20,7 +21,7 @@
  from the TableView in a separate View.
  */
 
-@interface FullViewController : UIViewController
+@interface FullViewController : UIViewController<CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *fullImageView;
 
@@ -31,5 +32,8 @@
 @property (nonatomic, strong) UIImage *displayImage;
 
 @property (nonatomic, strong) ALAsset *assetInfo;
+
+@property (nonatomic, strong) NSString *locationString;
+
 
 @end

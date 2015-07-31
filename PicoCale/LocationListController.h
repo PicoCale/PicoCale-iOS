@@ -34,6 +34,7 @@
 
 @property (nonatomic, strong) NSString *locationString;
 
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
 
 + (ALAssetsLibrary *)defaultAssetsLibrary;

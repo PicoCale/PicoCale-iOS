@@ -13,7 +13,9 @@
 
 
 @interface FullViewController()
-
+{
+    CLLocationManager *locationManager;
+}
 
 @end
 
@@ -25,11 +27,25 @@
  to enable zoom and pan effects
  */
 
+
 -(void)viewDidLoad{
     
     [self.fullImageView setImage:_displayImage];
     [self.fullImageLabel setTitle:_displayImage.description];
     self.fullImageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size= self->_displayImage.size};
+    self->locationManager = [[CLLocationManager alloc] init];
+    [self->locationManager startUpdatingLocation];
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:self->locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
+        //NSLog(@"Finding address");
+        if (error) {
+            NSLog(@"Error %@", error.description);
+        } else {
+            self.locationString = [[placemarks lastObject]subLocality];
+        }
+    }];
+
     
 }
 
@@ -45,7 +61,7 @@
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         
-        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using #PicoCale"]];
+        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using @PicoCaleApp from #%@",[self.locationString stringByReplacingOccurrencesOfString:@" " withString:@"_"]]];
         
         [tweetSheet addImage:self->_displayImage];
         
