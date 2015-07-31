@@ -34,7 +34,70 @@
 }
 
 
-- (IBAction)FBShareButtonPressed:(id)sender {
+- (IBAction)TwitterShareButtonPressed:(id)sender {
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+        
+    {
+        
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        
+        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using #PicoCale"]];
+        
+        [tweetSheet addImage:self->_displayImage];
+        
+        
+        [self presentViewController:tweetSheet animated:YES completion:^(void) {
+            NSLog(@"Photo Uploaded to Twitter");
+        }
+         ];
+        
+    } else {
+        
+        [self twitterExceptionHandling:@"Please Sign in and allow access to Twitter to post the picture"];
+    }
+
+    
+}
+
+
+
+
+/*
+ Exception Handling to warn user to sign in and give access to Twitter credentials
+ before posting the picture
+ */
+
+-(void)twitterExceptionHandling:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!!!" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"User pressed Cancel");
+                                   }];
+    
+    UIAlertAction *settingsAction = [UIAlertAction
+                                     actionWithTitle:NSLocalizedString(@"Settings", @"Settings action")
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction *action)
+                                     {
+                                         NSLog(@"Settings Pressed");
+                                         
+                                         //code for opening settings app in iOS 8
+                                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                         
+                                     }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:settingsAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "LocationListController.h"
 #import "FullViewController.h"
 #import "SettingsController.h"
+#import "LocationListCollectionViewController.h"
 
 
 @interface LocationListController ()
@@ -33,6 +34,8 @@ static NSMutableString *radius_CC = (NSMutableString *) @"5";
 static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
 static NSMutableArray *placeMarks;
 static NSMutableOrderedSet *placeMarksSet;
+
+
 
 +(NSString *)getRadius_C{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -124,9 +127,15 @@ static NSMutableOrderedSet *placeMarksSet;
     [self->locationManager startUpdatingLocation];
     // collect the photos
     [self disPlayLocationBasedPictures:self->locationManager.location];
-    myTimer= [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector:@selector(refreshTable:) userInfo:nil repeats: YES];
    
 }
+
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [myTimer invalidate];
+    
+}
+
 
 -(void)refreshTable:(NSTimer *)timer {
     [self.tableView reloadData];
@@ -202,11 +211,11 @@ static NSMutableOrderedSet *placeMarksSet;
          
          self.locationList = [[NSArray alloc]initWithArray:placeMarks];
         // arrayWithNoDuplicates = [[[NSSet alloc]initWithArray:placeMarks] allObjects];
-        
+        /*
          dispatch_async(dispatch_get_main_queue(), ^{
              [self.tableView reloadData];
          });
-
+       */
          
          
      }
@@ -246,10 +255,11 @@ static NSMutableOrderedSet *placeMarksSet;
     
     // Configure each cell in the
    
-    
-    [imageCell.textLabel setText:[placeMarks objectAtIndex:indexPath.row]];
- 
-        
+    if(placeMarks.count >0) {
+  
+        [imageCell.textLabel setText:[placeMarks objectAtIndex:indexPath.row]];
+    }
+
         //ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
         
         //CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
@@ -281,7 +291,6 @@ static NSMutableOrderedSet *placeMarksSet;
 
 
 
-
 /*
  The below method is a listener to listen for row select event inside the Table View
  On selecting the row, the view will segue to an UIImageView to display the image
@@ -289,30 +298,21 @@ static NSMutableOrderedSet *placeMarksSet;
  */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+  
+    self.locationString = [placeMarks objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"viewLocationListColl" sender:self.locationString];
     
 }
-
-/*
- Encapsulate MPMoviePlayerController into a separate method for modularity
- This method is referred from the course example uploaded in Blackboard
- */
-
-
-
-/*
- In order to show the images selected in a separate imageview, use segue and
- prepare the segue to send image data of the selected row to the destination
- UIViewController
- */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    FullViewController *fVC = [segue destinationViewController];
+    LocationListCollectionViewController *fVC = [segue destinationViewController];
     
-    fVC.displayImage = self->_image;
+    fVC.locationString = self.locationString;
     
 }
+
+
 
 /*
  Set Tableview dimensions upon view load
@@ -322,6 +322,8 @@ static NSMutableOrderedSet *placeMarksSet;
     [super viewDidLoad];
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     double radius;
+    
+    myTimer= [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector:@selector(refreshTable:) userInfo:nil repeats: NO];
     
     SettingsController *sc = [[SettingsController alloc]init];
     
@@ -350,21 +352,8 @@ static NSMutableOrderedSet *placeMarksSet;
     
     NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
     
-    
-
-    
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    //BEFORE DOING SO CHECK THAT TIMER MUST NOT BE ALREADY INVALIDATED
-    //Always nil your timer after invalidating so that
-    //it does not cause crash due to duplicate invalidate
-    if(myTimer)
-    {
-        [myTimer invalidate];
-        myTimer = nil;
-    }
-}
 
 - (CLLocation *)deviceLocation {
     return self->locationManager.location;

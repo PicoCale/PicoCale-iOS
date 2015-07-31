@@ -1,11 +1,10 @@
 //
-//  FullViewController.h
-//  manantha_Universal_Multimedia
+//  LocationListImageViewController.h
+//  PicoCale
 //
-//  Created by Manishgant on 7/5/15.
+//  Created by Manishgant on 7/30/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
-
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
@@ -20,7 +19,7 @@
  from the TableView in a separate View.
  */
 
-@interface FlickrViewController : UIViewController
+@interface LocationListImageViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *fullImageView;
 
@@ -31,7 +30,5 @@
 @property (nonatomic, strong) UIImage *displayImage;
 
 @property (nonatomic, strong) ALAsset *assetInfo;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareTwitter;
 
 @end

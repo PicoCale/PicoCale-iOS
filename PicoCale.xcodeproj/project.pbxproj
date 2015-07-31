@@ -17,6 +17,9 @@
 		FD1B742F1B421E1900E697C0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1B742E1B421E1900E697C0 /* CoreMotion.framework */; };
 		FD1B74311B421E2000E697C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1B74301B421E2000E697C0 /* AVFoundation.framework */; };
 		FD1B74331B421E2600E697C0 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1B74321B421E2600E697C0 /* AVKit.framework */; };
+		FD3259E21B6AFF900088495B /* LocationListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3259E11B6AFF900088495B /* LocationListCollectionViewController.m */; };
+		FD3259E51B6B14E00088495B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3259E41B6B14E00088495B /* Location.m */; };
+		FD3259E81B6B24060088495B /* LocationListImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3259E71B6B24060088495B /* LocationListImageViewController.m */; };
 		FD88F23A1B64A57F00DC262D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2271B64A57F00DC262D /* CameraViewController.m */; };
 		FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2291B64A57F00DC262D /* FullViewController.m */; };
 		FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22B1B64A57F00DC262D /* ImagesViewController.m */; };
@@ -74,6 +77,12 @@
 		FD1B742E1B421E1900E697C0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		FD1B74301B421E2000E697C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FD1B74321B421E2600E697C0 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		FD3259E01B6AFF6F0088495B /* LocationListCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationListCollectionViewController.h; sourceTree = "<group>"; };
+		FD3259E11B6AFF900088495B /* LocationListCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListCollectionViewController.m; sourceTree = "<group>"; };
+		FD3259E31B6B14CE0088495B /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		FD3259E41B6B14E00088495B /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		FD3259E61B6B23EF0088495B /* LocationListImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationListImageViewController.h; sourceTree = "<group>"; };
+		FD3259E71B6B24060088495B /* LocationListImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListImageViewController.m; sourceTree = "<group>"; };
 		FD88F2261B64A57F00DC262D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		FD88F2271B64A57F00DC262D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		FD88F2281B64A57F00DC262D /* FullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullViewController.h; sourceTree = "<group>"; };
@@ -205,11 +214,17 @@
 			isa = PBXGroup;
 			children = (
 				FD88F2BD1B681F0E00DC262D /* AppDelegate.h */,
+				FD3259E31B6B14CE0088495B /* Location.h */,
+				FD3259E41B6B14E00088495B /* Location.m */,
+				FD3259E01B6AFF6F0088495B /* LocationListCollectionViewController.h */,
+				FD3259E11B6AFF900088495B /* LocationListCollectionViewController.m */,
+				FD3259E61B6B23EF0088495B /* LocationListImageViewController.h */,
+				FD3259E71B6B24060088495B /* LocationListImageViewController.m */,
 				FD88F2BE1B681F0E00DC262D /* AppDelegate.m */,
 				FD88F2C31B683C3F00DC262D /* FlickrViewController.h */,
+				FD88F2C41B683C3F00DC262D /* FlickrViewController.m */,
 				FD1944621B698F3D0078B881 /* LocationListController.h */,
 				FD1944631B698F4F0078B881 /* LocationListController.m */,
-				FD88F2C41B683C3F00DC262D /* FlickrViewController.m */,
 				FD88F2B91B68169800DC262D /* SnapAndRunViewController.h */,
 				FD88F2BA1B68169800DC262D /* SnapAndRunViewController.m */,
 				FD88F2C91B684B3D00DC262D /* Flickr.h */,
@@ -424,11 +439,13 @@
 				FD88F2C81B683DF100DC262D /* FlickrPhoto.m in Sources */,
 				FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */,
 				FD88F2881B6700C700DC262D /* NSData+Base64.m in Sources */,
+				FD3259E81B6B24060088495B /* LocationListImageViewController.m in Sources */,
 				FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */,
 				FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */,
 				FD88F2CB1B684B4F00DC262D /* Flickr.m in Sources */,
 				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
 				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,
+				FD3259E51B6B14E00088495B /* Location.m in Sources */,
 				FD88F2BC1B68169800DC262D /* SnapAndRunViewController.m in Sources */,
 				FD88F2501B653CDC00DC262D /* Constants.m in Sources */,
 				FD88F2C51B683C3F00DC262D /* FlickrViewController.m in Sources */,
@@ -436,6 +453,7 @@
 				FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */,
 				FD88F2421B64A57F00DC262D /* TwitterVideoUploader.m in Sources */,
 				FD1B74001B41FE8C00E697C0 /* main.m in Sources */,
+				FD3259E21B6AFF900088495B /* LocationListCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

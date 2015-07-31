@@ -1,19 +1,18 @@
 //
-//  ImagesViewController.h
-//  manantha_Universal_Multimedia
+//  LocationListCollectionViewController.h
+//  PicoCale
 //
-//  Created by Manishgant on 7/4/15.
+//  Created by Manishgant on 7/30/15.
 //  Copyright (c) 2015 Manishgant. All rights reserved.
 //
+
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "Photo.h"
 #import "SettingsController.h"
-#import <Photos/Photos.h>
-#import <Social/Social.h>
-#import <Accounts/Accounts.h>
+#import "Location.h"
 
 
 @import MapKit;
@@ -23,7 +22,7 @@
  make the view controller as UIImagePickerConcontroller delegate
  */
 
-@interface ImagesViewController : UICollectionViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface LocationListCollectionViewController : UICollectionViewController<UIImagePickerControllerDelegate, CLLocationManagerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSMutableArray *photos;
 
@@ -39,6 +38,9 @@
 
 @property (nonatomic, strong) NSMutableString *radius_C;
 
+@property (nonatomic, weak) NSString *locationString;
+
+@property (nonatomic, strong) Location *passLocation1;
 
 +(NSMutableString *)getRadius_C;
 
@@ -49,8 +51,4 @@
 + (ALAssetsLibrary *)defaultAssetsLibrary;
 
 @end
-
-
-
-
 

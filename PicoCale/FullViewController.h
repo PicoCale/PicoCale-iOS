@@ -9,6 +9,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 
 

@@ -29,7 +29,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     [super viewDidLoad];
     //self.title = @"Flickr Cloud Album";
     
-	if (![[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
+	if ([[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
 		authorizeButton.enabled = NO;
         //authorizeButton.enabled = NO;
         authorizeDescriptionLabel.text = @"Authenticating...";

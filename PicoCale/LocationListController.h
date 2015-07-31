@@ -11,6 +11,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "SettingsController.h"
+#import "Location.h"
 
 @import CoreLocation;
 
@@ -28,6 +29,10 @@
 @property (nonatomic, strong) UIImage *image;
 
 @property (nonatomic, strong) ALAsset *assetInfo;
+
+@property (nonatomic, strong) CLLocation *passLocation;
+
+@property (nonatomic, strong) NSString *locationString;
 
 
 
