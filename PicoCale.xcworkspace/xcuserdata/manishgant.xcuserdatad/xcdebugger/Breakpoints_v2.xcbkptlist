@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicoCale/LocationListController.m"
-            timestampString = "460005680.688695"
+            timestampString = "460011850.478801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "-reverseGeocode:"
             landmarkType = "5">
             <Locations>
@@ -342,11 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PicoCale/LocationListController.m"
-            timestampString = "460005680.688695"
+            timestampString = "460011850.478801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

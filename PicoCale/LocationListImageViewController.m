@@ -30,6 +30,8 @@
     [self.fullImageView setImage:_displayImage];
     [self.fullImageLabel setTitle:_displayImage.description];
     self.fullImageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size= self->_displayImage.size};
+    self.fullImageLabel.title = self.locationString;
+    
     
 }
 

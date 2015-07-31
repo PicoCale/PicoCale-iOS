@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) UIImage *displayImage;
 
+@property (nonatomic, strong) NSString *locationString;
+
 @property (nonatomic, strong) ALAsset *assetInfo;
 
 @end

@@ -124,9 +124,18 @@ static NSMutableOrderedSet *placeMarksSet;
 {
     
     [super viewWillAppear:animated];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    // add it
+    [self.view addSubview:indicator];
+    
+    // animate it
+    [indicator startAnimating];
+    
     [self->locationManager startUpdatingLocation];
     // collect the photos
     [self disPlayLocationBasedPictures:self->locationManager.location];
+    [indicator stopAnimating];
    
 }
 
@@ -323,7 +332,10 @@ static NSMutableOrderedSet *placeMarksSet;
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     double radius;
     
-    myTimer= [NSTimer scheduledTimerWithTimeInterval: 2.0 target:self selector:@selector(refreshTable:) userInfo:nil repeats: NO];
+    
+    myTimer= [NSTimer scheduledTimerWithTimeInterval: 3.0 target:self selector:@selector(refreshTable:) userInfo:nil repeats: NO];
+    
+    
     
     SettingsController *sc = [[SettingsController alloc]init];
     
@@ -351,6 +363,7 @@ static NSMutableOrderedSet *placeMarksSet;
     self->currentLocation = [self deviceLocation] ;
     
     NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
+    
     
 }
 

@@ -42,6 +42,8 @@
 
 @property (nonatomic, strong) Location *passLocation1;
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *controllerLabel;
+
 +(NSMutableString *)getRadius_C;
 
 +(NSString *)getnoPhotos;

@@ -30,7 +30,7 @@
 @implementation LocationListCollectionViewController
 
 
-static NSMutableString *radius_CC = (NSMutableString *) @"0.18";
+static NSMutableString *radius_CC = (NSMutableString *) @"0.2";
 static NSMutableString *noPhotosAlerts = (NSMutableString *) @"10";
 static NSMutableArray *placeMarks;
 static NSArray *passArray;
@@ -464,6 +464,7 @@ static NSMutableArray *placeMarkThoroughfare;
     LocationListImageViewController *fVC = [segue destinationViewController];
     
     fVC.displayImage = self->_image;
+    fVC.locationString = self.locationString;
     
 }
 
@@ -477,6 +478,8 @@ static NSMutableArray *placeMarkThoroughfare;
     
     double radius;
     SettingsController *sc = [[SettingsController alloc]init];
+    
+    self.controllerLabel.title = self.locationString;
     
     if (sc.radius_C == nil) {
         radius = 5*0.8;

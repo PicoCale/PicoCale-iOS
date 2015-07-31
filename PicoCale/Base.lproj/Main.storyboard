@@ -541,6 +541,10 @@
                             <outlet property="delegate" destination="v7S-yZ-bYw" id="mOJ-ed-ysb"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Title" id="15d-tQ-aUl"/>
+                    <connections>
+                        <outlet property="controllerLabel" destination="15d-tQ-aUl" id="Lq8-ng-tOd"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRq-yv-zsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1015,6 +1019,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="fullImageLabel" destination="dgX-Fj-Zlj" id="afz-Cx-bjX"/>
                         <outlet property="fullImageView" destination="A55-Jg-ok8" id="Cdz-bJ-xIv"/>
                     </connections>
                 </viewController>
