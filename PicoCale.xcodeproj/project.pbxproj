@@ -25,11 +25,7 @@
 		FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22B1B64A57F00DC262D /* ImagesViewController.m */; };
 		FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22D1B64A57F00DC262D /* MediaPreview.m */; };
 		FD88F23E1B64A57F00DC262D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F22F1B64A57F00DC262D /* Photo.m */; };
-		FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2311B64A57F00DC262D /* PreviewController.m */; };
 		FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2331B64A57F00DC262D /* PreviewVideoController.m */; };
-		FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2351B64A57F00DC262D /* TweetDisplayView.m */; };
-		FD88F2421B64A57F00DC262D /* TwitterVideoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */; };
-		FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2391B64A57F00DC262D /* TwitterViewController.m */; };
 		FD88F2451B64A5AB00DC262D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2441B64A5AB00DC262D /* Twitter.framework */; };
 		FD88F2471B64A5B500DC262D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2461B64A5B500DC262D /* Photos.framework */; };
 		FD88F2491B64A5C200DC262D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */; };
@@ -47,6 +43,7 @@
 		FD88F2C51B683C3F00DC262D /* FlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2C41B683C3F00DC262D /* FlickrViewController.m */; };
 		FD88F2C81B683DF100DC262D /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2C71B683DF100DC262D /* FlickrPhoto.m */; };
 		FD88F2CB1B684B4F00DC262D /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD88F2CA1B684B4F00DC262D /* Flickr.m */; };
+		FDB7B1E71B6D368F002D0876 /* TwitterVideoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B1E61B6D368F002D0876 /* TwitterVideoUploader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,16 +90,8 @@
 		FD88F22D1B64A57F00DC262D /* MediaPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPreview.m; sourceTree = "<group>"; };
 		FD88F22E1B64A57F00DC262D /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		FD88F22F1B64A57F00DC262D /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		FD88F2301B64A57F00DC262D /* PreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewController.h; sourceTree = "<group>"; };
-		FD88F2311B64A57F00DC262D /* PreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewController.m; sourceTree = "<group>"; };
 		FD88F2321B64A57F00DC262D /* PreviewVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewVideoController.h; sourceTree = "<group>"; };
 		FD88F2331B64A57F00DC262D /* PreviewVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewVideoController.m; sourceTree = "<group>"; };
-		FD88F2341B64A57F00DC262D /* TweetDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDisplayView.h; sourceTree = "<group>"; };
-		FD88F2351B64A57F00DC262D /* TweetDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDisplayView.m; sourceTree = "<group>"; };
-		FD88F2361B64A57F00DC262D /* TwitterVideoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterVideoUploader.h; sourceTree = "<group>"; };
-		FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterVideoUploader.m; sourceTree = "<group>"; };
-		FD88F2381B64A57F00DC262D /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
-		FD88F2391B64A57F00DC262D /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		FD88F2441B64A5AB00DC262D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		FD88F2461B64A5B500DC262D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		FD88F2481B64A5C200DC262D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -130,6 +119,8 @@
 		FD88F2C71B683DF100DC262D /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
 		FD88F2C91B684B3D00DC262D /* Flickr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
 		FD88F2CA1B684B4F00DC262D /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		FDB7B1E51B6D368F002D0876 /* TwitterVideoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterVideoUploader.h; sourceTree = "<group>"; };
+		FDB7B1E61B6D368F002D0876 /* TwitterVideoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterVideoUploader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				FD88F2BD1B681F0E00DC262D /* AppDelegate.h */,
+				FDB7B1E51B6D368F002D0876 /* TwitterVideoUploader.h */,
+				FDB7B1E61B6D368F002D0876 /* TwitterVideoUploader.m */,
 				FD3259E31B6B14CE0088495B /* Location.h */,
 				FD3259E41B6B14E00088495B /* Location.m */,
 				FD3259E01B6AFF6F0088495B /* LocationListCollectionViewController.h */,
@@ -245,16 +238,8 @@
 				FD88F2C71B683DF100DC262D /* FlickrPhoto.m */,
 				FD88F22E1B64A57F00DC262D /* Photo.h */,
 				FD88F22F1B64A57F00DC262D /* Photo.m */,
-				FD88F2301B64A57F00DC262D /* PreviewController.h */,
-				FD88F2311B64A57F00DC262D /* PreviewController.m */,
 				FD88F2321B64A57F00DC262D /* PreviewVideoController.h */,
 				FD88F2331B64A57F00DC262D /* PreviewVideoController.m */,
-				FD88F2341B64A57F00DC262D /* TweetDisplayView.h */,
-				FD88F2351B64A57F00DC262D /* TweetDisplayView.m */,
-				FD88F2361B64A57F00DC262D /* TwitterVideoUploader.h */,
-				FD88F2371B64A57F00DC262D /* TwitterVideoUploader.m */,
-				FD88F2381B64A57F00DC262D /* TwitterViewController.h */,
-				FD88F2391B64A57F00DC262D /* TwitterViewController.m */,
 				FD88F2541B654E0100DC262D /* SettingsController.h */,
 				FD88F2521B654CB100DC262D /* SettingsController.m */,
 				FD1B740D1B41FE8D00E697C0 /* Images.xcassets */,
@@ -437,11 +422,10 @@
 				FD88F2891B6700C700DC262D /* NSString+URLEncodeString.m in Sources */,
 				FD88F2531B654CB100DC262D /* SettingsController.m in Sources */,
 				FD88F2C81B683DF100DC262D /* FlickrPhoto.m in Sources */,
+				FDB7B1E71B6D368F002D0876 /* TwitterVideoUploader.m in Sources */,
 				FD88F23D1B64A57F00DC262D /* MediaPreview.m in Sources */,
 				FD88F2881B6700C700DC262D /* NSData+Base64.m in Sources */,
 				FD3259E81B6B24060088495B /* LocationListImageViewController.m in Sources */,
-				FD88F2411B64A57F00DC262D /* TweetDisplayView.m in Sources */,
-				FD88F2431B64A57F00DC262D /* TwitterViewController.m in Sources */,
 				FD88F2CB1B684B4F00DC262D /* Flickr.m in Sources */,
 				FD88F2401B64A57F00DC262D /* PreviewVideoController.m in Sources */,
 				FD88F23C1B64A57F00DC262D /* ImagesViewController.m in Sources */,
@@ -449,9 +433,7 @@
 				FD88F2BC1B68169800DC262D /* FlickrCollectionViewController.m in Sources */,
 				FD88F2501B653CDC00DC262D /* Constants.m in Sources */,
 				FD88F2C51B683C3F00DC262D /* FlickrViewController.m in Sources */,
-				FD88F23F1B64A57F00DC262D /* PreviewController.m in Sources */,
 				FD88F23B1B64A57F00DC262D /* FullViewController.m in Sources */,
-				FD88F2421B64A57F00DC262D /* TwitterVideoUploader.m in Sources */,
 				FD1B74001B41FE8C00E697C0 /* main.m in Sources */,
 				FD3259E21B6AFF900088495B /* LocationListCollectionViewController.m in Sources */,
 			);

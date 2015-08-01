@@ -17,6 +17,8 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     
     CLLocation *currentLocation;
     
+    NSTimer *myTimer;
+    
 }
 
 @end
@@ -29,14 +31,24 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     [super viewDidLoad];
     //self.title = @"Flickr Cloud Album";
     
-	if ([[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
-		authorizeButton.enabled = NO;
+     myTimer= [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(loadImages:) userInfo:nil repeats: NO];
+    
+	if (![AppDelegate sharedDelegate].flickrContext.OAuthToken) {
+        //[[AppDelegate sharedDelegate] setAndStoreFlickrAuthToken:nil secret:nil];
+        
+        authorizeButton.enabled = NO;
         //authorizeButton.enabled = NO;
         authorizeDescriptionLabel.text = @"Authenticating...";
         
         self.flickrRequest.sessionInfo = kFetchRequestTokenStep;
         [self.flickrRequest fetchOAuthRequestTokenWithCallbackURL:[NSURL URLWithString:SRCallbackURLBaseString]];
-	}
+        
+    }
+    
+    if ([[AppDelegate sharedDelegate].flickrContext.OAuthToken length]) {
+         self.flickrRequest.sessionInfo = kFetchRequestTokenStep;
+        
+    }
     
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserInterface:) name:SnapAndRunShouldUpdateAuthInfoNotification object:nil];
     
@@ -54,6 +66,8 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     //Get Curent Location coordinates from current MapView
     self->currentLocation = [self deviceLocation] ;
     
+    
+    
     NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
     
 }
@@ -64,7 +78,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     
     [self->locationManager startUpdatingLocation];
 	//[self updateUserInterface:nil];
-     [self loadImages];
+     //[self loadImages];
     [self.collectionView reloadData];
     
 }
@@ -179,7 +193,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 #pragma mark Actions
 
 
-- (IBAction)onFetchPhotosPressed:(id)sender {
+- (void)onFetchPhotosPressed {
     
     self->currentLocation = [self deviceLocation];
     NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
@@ -221,7 +235,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
     }
 }
 
-- (void)loadImages {
+- (void)loadImages:(NSTimer *) timer {
     self->currentLocation = [self deviceLocation];
     NSLog(@"Curent Location : Latitude : %f Longitude : %f", self->currentLocation.coordinate.latitude, self->currentLocation.coordinate.longitude);
     
@@ -333,11 +347,11 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 		snapPictureDescriptionLabel.text = @"Failed";		
 		[UIApplication sharedApplication].idleTimerDisabled = NO;
 
-		[[[UIAlertView alloc] initWithTitle:@"API Failed" message:[inError description] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+		//[[[UIAlertView alloc] initWithTitle:@"API Failed" message:[inError description] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
 
 	}
 	else {
-		[[[UIAlertView alloc] initWithTitle:@"API Failed" message:[inError description] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+		//[[[UIAlertView alloc] initWithTitle:@"API Failed" message:[inError description] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
 	}
 }
 
