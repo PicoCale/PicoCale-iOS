@@ -9,10 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import <Photos/Photos.h>
-#import <Social/Social.h>
-#import <Accounts/Accounts.h>
-
+#import "FlickrCollectionViewController.h"
 
 @import CoreLocation;
 /*
@@ -20,7 +17,7 @@
  from the TableView in a separate View.
  */
 
-@interface FlickrViewController : UIViewController<CLLocationManagerDelegate>
+@interface FlickrViewController : UIViewController<CLLocationManagerDelegate,OFFlickrAPIRequestDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *fullImageView;
 
@@ -37,5 +34,12 @@
 @property (nonatomic,strong) CLLocation *location;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareTwitter;
+
+@property (nonatomic, strong) CLLocation *selectedLocation;
+
+@property (nonatomic, strong) OFFlickrAPIRequest *flickrRequest;
+
+@property(nonatomic) long long photoID;
+
 
 @end

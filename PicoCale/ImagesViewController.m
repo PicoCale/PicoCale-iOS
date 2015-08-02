@@ -269,7 +269,8 @@ static NSMutableArray *placeMarkThoroughfare;
             [placeMarks addObjectsFromArray:placemarks];
             [placeMarkThoroughfare addObject:[[placeMarks lastObject]thoroughfare]];
             
-            NSLog(@"Location info %@",[[placeMarks lastObject] thoroughfare]);
+            //NSLog(@"Location info %@",[[placeMarks lastObject] thoroughfare]);
+            self.locationString = [[placemarks lastObject]thoroughfare];
         }
     }];
     
@@ -360,6 +361,12 @@ static NSMutableArray *placeMarkThoroughfare;
     
     if (!(([tempString containsString:(@".MOV")]) || ([tempString containsString:(@".MP4")])||
           ([tempString containsString:(@".mov")]) || ([tempString containsString:(@".mp4")]))) {
+       
+         ALAsset *asset = [self.photos objectAtIndex:indexPath.row];
+        
+        self.selectedLocation = [asset valueForProperty:ALAssetPropertyLocation];
+        
+        //[NSThread sleepForTimeInterval:1.0];
         
         [self performSegueWithIdentifier:@"viewFullScreenImage" sender:self.image];
         
@@ -448,6 +455,8 @@ static NSMutableArray *placeMarkThoroughfare;
     FullViewController *fVC = [segue destinationViewController];
     
     fVC.displayImage = self->_image;
+    
+    fVC.selectedLocation = self.selectedLocation;
     
 }
 

@@ -39,6 +39,11 @@
 
 @property (nonatomic, strong) NSMutableString *radius_C;
 
+@property (nonatomic, strong) NSString *locationString;
+
+@property (nonatomic, strong) CLLocation *selectedLocation;
+
+
 
 +(NSMutableString *)getRadius_C;
 

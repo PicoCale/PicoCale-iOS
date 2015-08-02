@@ -27,11 +27,34 @@
  to enable zoom and pan effects
  */
 
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self reverseGeocode:self.selectedLocation];
+    
+}
+
+- (void)reverseGeocode:(CLLocation *)location {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        //NSLog(@"Finding address");
+        if (error) {
+            NSLog(@"Error %@", error.description);
+        } else {
+            self.locationStringTitle = [[placemarks lastObject]thoroughfare];
+             [self.fullImageLabel setTitle:self.locationStringTitle];
+            NSLog(self.locationStringTitle);
+        }
+    }];
+    
+    //[self.tableView reloadData];
+}
 
 -(void)viewDidLoad{
     
     [self.fullImageView setImage:_displayImage];
-    [self.fullImageLabel setTitle:_displayImage.description];
+    
+   
     self.fullImageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size= self->_displayImage.size};
     self->locationManager = [[CLLocationManager alloc] init];
     [self->locationManager startUpdatingLocation];
@@ -61,7 +84,7 @@
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         
-        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using @PicoCaleApp from #%@",[self.locationString stringByReplacingOccurrencesOfString:@" " withString:@"_"]]];
+        [tweetSheet setInitialText: [NSString stringWithFormat:@" Sent using @PicoCaleApp from #%@",[self.locationStringTitle stringByReplacingOccurrencesOfString:@" " withString:@"_"]]];
         
         [tweetSheet addImage:self->_displayImage];
         

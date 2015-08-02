@@ -137,12 +137,26 @@ static NSMutableOrderedSet *placeMarksSet;
     
     [super viewWillAppear:animated];
     
-    [self performSelectorOnMainThread:@selector(startAnimation:) withObject:self waitUntilDone:YES];
     
     [self->locationManager startUpdatingLocation];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(160, 240);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    
+    // how we stop refresh from freezing the main UI threa
+        // do our long running process here
+[self disPlayLocationBasedPictures:self->locationManager.location];
+    
+    [NSThread sleepForTimeInterval:1.0];
+        // do any UI stuff on the main UI thread
+[spinner stopAnimating];
+
     // collect the photos
-    [self disPlayLocationBasedPictures:self->locationManager.location];
-    [self performSelectorOnMainThread:@selector(stopAnimation:) withObject:self waitUntilDone:YES];
+  
+   
 
    
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FlickrViewController.h"
+#import <Social/Social.h>
 
 
 
@@ -15,11 +16,13 @@
 @interface FlickrViewController()
 {
     CLLocationManager *locationManager;
+    
 }
 
 @end
 
 @implementation FlickrViewController
+
 
 /*
  Set the image to be displayed on View load
@@ -35,18 +38,23 @@
     self->locationManager = [[CLLocationManager alloc] init];
     [self->locationManager startUpdatingLocation];
     
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:self->locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
-        //NSLog(@"Finding address");
-        if (error) {
-            NSLog(@"Error %@", error.description);
-        } else {
-            self.locationString = [[placemarks lastObject]subLocality];
-        }
-    }];
+     self.flickrRequest = [[OFFlickrAPIRequest alloc] initWithAPIContext:[AppDelegate sharedDelegate].flickrContext];
+    
+    [self.flickrRequest callAPIMethodWithGET:@"flickr.photos.geo.getLocation" arguments:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%lld",self.photoID],@"photo_id", nil]];
+    
+    
+}
 
+
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didObtainOAuthRequestToken:(NSString *)inRequestToken secret:(NSString *)inSecret
+{
+    // these two lines are important
+    [AppDelegate sharedDelegate].flickrContext.OAuthToken = inRequestToken;
+    [AppDelegate sharedDelegate].flickrContext.OAuthTokenSecret = inSecret;
     
-    
+    NSURL *authURL = [[AppDelegate sharedDelegate].flickrContext userAuthorizationURLWithRequestToken:inRequestToken requestedPermission:OFFlickrWritePermission];
+    [[UIApplication sharedApplication] openURL:authURL];
 }
 
 
@@ -114,6 +122,35 @@
     [alertController addAction:settingsAction];
     [self presentViewController:alertController animated:YES completion:nil];
     
+}
+
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didCompleteWithResponse:(NSDictionary *)inResponseDictionary
+{
+    //NSDictionary *photoDict = [[inResponseDictionary valueForKeyPath:@"photos.photo"] objectAtIndex:0];
+    
+    //NSString *title = [photoDict objectForKey:@"title"];
+    // NSLog(@"PhotoTitle : %@",title);
+    
+    NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, inRequest.sessionInfo, inResponseDictionary);
+    
+    NSArray *objPhotos = inResponseDictionary[@"photos"][@"photo"];
+    
+        NSMutableDictionary *objPhoto = objPhotos[0][@"location"];
+        NSLog(@"The location is: %@",objPhoto);
+        [self.fullImageLabel setTitle:self.locationString];
+    
+    
+    
+}
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
+{
+   // NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, inRequest.sessionInfo, inError);
+}
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest imageUploadSentBytes:(NSUInteger)inSentBytes totalBytes:(NSUInteger)inTotalBytes
+{
 }
 
 @end

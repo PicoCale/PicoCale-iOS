@@ -1,7 +1,5 @@
 
 #import "FlickrCollectionViewController.h"
-#import "AppDelegate.h"
-#import "FlickrPhoto.h"
 #import "Flickr.h"
 #import "FlickrViewController.h"
 
@@ -122,7 +120,7 @@ NSString *kUploadImageStep = @"kUploadImageStep";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
 
-    
+    self.photoID = [[self.flickrPics objectAtIndex:indexPath.row] photoID];
     
     self.image = [[self.flickrPics objectAtIndex:indexPath.row] thumbnail];
     
@@ -319,6 +317,9 @@ NSString *kUploadImageStep = @"kUploadImageStep";
         photo.server = [objPhoto[@"server"] intValue];
         photo.secret = objPhoto[@"secret"];
         photo.photoID = [objPhoto[@"id"] longLongValue];
+        FlickrViewController *fvC = [[FlickrViewController alloc]init];
+        [fvC.fullImageLabel setTitle:@"Image1"];
+        //self.photoID = [objPhoto[@"id"] longLongValue];
         
         NSString *searchURL = [Flickr flickrPhotoURLForFlickrPhoto:photo size:@"m"];
         
@@ -327,8 +328,6 @@ NSString *kUploadImageStep = @"kUploadImageStep";
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:searchURL] options:0 error:nil];
         UIImage *image = [UIImage imageWithData:imageData];
         photo.thumbnail = image;
-        
-        
         
         [flickrPhotos addObject:photo];
         [self.flickrPics addObject:photo];
@@ -435,7 +434,9 @@ NSString *kUploadImageStep = @"kUploadImageStep";
         FlickrViewController *fVC = [segue destinationViewController];
         
         fVC.displayImage = self.image;
-        
+        fVC.photoID = self.photoID;
+        fVC.flickrRequest = flickrRequest;
+    
 }
 
 #ifndef __IPHONE_3_0

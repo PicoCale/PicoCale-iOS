@@ -49,7 +49,7 @@
             <objects>
                 <collectionViewController id="D1r-LN-5uo" customClass="SnapAndRunViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9F4-wn-WEL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="mxU-gz-xhK">
                             <size key="itemSize" width="105" height="100"/>
@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="1351.5" y="-1238"/>
         </scene>
-        <!--Title-->
+        <!--Flickr View Controller-->
         <scene sceneID="cW8-b3-MK8">
             <objects>
                 <viewController id="B5Z-dP-rbr" customClass="FlickrViewController" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ywm-gS-3KQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LYW-bq-lGA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hKO-ae-xSb">
@@ -136,7 +136,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="xo8-Ii-LCQ">
+                    <navigationItem key="navigationItem" id="xo8-Ii-LCQ">
                         <barButtonItem key="rightBarButtonItem" image="Twitter" id="4UX-Wd-etz">
                             <connections>
                                 <action selector="TwitterShareButtonPressed:" destination="B5Z-dP-rbr" id="vz7-e3-Xhb"/>
@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="1527" y="-529"/>
         </scene>
-        <!--Title-->
+        <!--Full View Controller-->
         <scene sceneID="Lu0-Ue-ApZ">
             <objects>
                 <viewController id="dPN-x9-pJF" customClass="FullViewController" sceneMemberID="viewController">
@@ -200,10 +200,10 @@
                         <viewControllerLayoutGuide type="bottom" id="Fgk-0r-GEr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lz6-e4-MxE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JVj-yv-yQ3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JVj-yv-yQ3">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -237,7 +237,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="X10-AE-yv2">
+                    <navigationItem key="navigationItem" id="X10-AE-yv2">
                         <barButtonItem key="rightBarButtonItem" image="Twitter" id="qob-kN-9UG">
                             <connections>
                                 <action selector="TwitterShareButtonPressed:" destination="dPN-x9-pJF" id="Y2j-Nx-7zy"/>
@@ -245,6 +245,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fullImageLabel" destination="X10-AE-yv2" id="Dl3-a3-dcM"/>
                         <outlet property="fullImageView" destination="JVj-yv-yQ3" id="n8W-Pj-9eH"/>
                     </connections>
                 </viewController>
@@ -280,7 +281,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bQi-g3-LNT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xnD-0u-fO4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Radius:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-No-g6W">
@@ -575,7 +576,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ekF-vc-Krc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DdX-Aq-L7g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A55-Jg-ok8">

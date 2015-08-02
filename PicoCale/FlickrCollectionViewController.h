@@ -57,4 +57,9 @@
 
 @property (nonatomic, retain) OFFlickrAPIRequest *flickrRequest;
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
+
+@property (nonatomic, strong) CLLocation *selectedLocation;
+
+@property(nonatomic) long long photoID;
+
 @end

@@ -35,5 +35,9 @@
 
 @property (nonatomic, strong) NSString *locationString;
 
+@property (nonatomic, strong) NSString *locationStringTitle;
+
+@property (nonatomic, strong) CLLocation *selectedLocation;
+
 
 @end
